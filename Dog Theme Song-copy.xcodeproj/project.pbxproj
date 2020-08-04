@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0615153523482C2A002DACEE /* RecordVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615153423482C2A002DACEE /* RecordVideoViewController.swift */; };
-		0615153C23483049002DACEE /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615153B23483049002DACEE /* VideoHelper.swift */; };
 		0641A3BB24D396A400773E4C /* drum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641A3BA24D396A400773E4C /* drum.mp3 */; };
 		0641A3BD24D396A900773E4C /* guitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641A3BC24D396A900773E4C /* guitar.mp3 */; };
+		06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB6F24D9D61B001D5556 /* VideoController.swift */; };
+		06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7124D9D88C001D5556 /* VideoViewController.swift */; };
+		06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */; };
+		06C5AB8524D9DAEB001D5556 /* SwiftyCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8024D9DAEB001D5556 /* SwiftyCamViewController.swift */; };
+		06C5AB8624D9DAEB001D5556 /* SwiftyCamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8124D9DAEB001D5556 /* SwiftyCamButton.swift */; };
+		06C5AB8724D9DAEB001D5556 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8224D9DAEB001D5556 /* Orientation.swift */; };
+		06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */; };
+		06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */; };
 		06FD965B23441DA300C4E81D /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD965A23441DA300C4E81D /* Variables.swift */; };
-		AE9A1661223D9ACD00E06531 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1660223D9ACD00E06531 /* MusicViewController.swift */; };
 		AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1662223D9C2600E06531 /* NameViewController.swift */; };
 		AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C1223C161C008A702D /* AppDelegate.swift */; };
 		AEDF12C4223C161C008A702D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C3223C161C008A702D /* ViewController.swift */; };
@@ -25,12 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0615153423482C2A002DACEE /* RecordVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVideoViewController.swift; sourceTree = "<group>"; };
-		0615153B23483049002DACEE /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
 		0641A3BA24D396A400773E4C /* drum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum.mp3; sourceTree = "<group>"; };
 		0641A3BC24D396A900773E4C /* guitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guitar.mp3; sourceTree = "<group>"; };
+		06C5AB6F24D9D61B001D5556 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		06C5AB7124D9D88C001D5556 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "../../../../Downloads/SwiftyCam-master/Source/PreviewView.swift"; sourceTree = "<group>"; };
+		06C5AB8024D9DAEB001D5556 /* SwiftyCamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewController.swift; path = "../../../../Downloads/SwiftyCam-master/Source/SwiftyCamViewController.swift"; sourceTree = "<group>"; };
+		06C5AB8124D9DAEB001D5556 /* SwiftyCamButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCamButton.swift; path = "../../../../Downloads/SwiftyCam-master/Source/SwiftyCamButton.swift"; sourceTree = "<group>"; };
+		06C5AB8224D9DAEB001D5556 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orientation.swift; path = "../../../../Downloads/SwiftyCam-master/Source/Orientation.swift"; sourceTree = "<group>"; };
+		06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = "../../../../Downloads/SwiftyCam-master/Source/SwiftyCamViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		06FD965A23441DA300C4E81D /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
-		AE9A1660223D9ACD00E06531 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		AE9A1662223D9C2600E06531 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		AEDF12BE223C161C008A702D /* Dog Theme Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Theme Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDF12C1223C161C008A702D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,12 +99,17 @@
 		AEDF12D3223C1ADF008A702D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06C5AB8224D9DAEB001D5556 /* Orientation.swift */,
+				06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */,
+				06C5AB8124D9DAEB001D5556 /* SwiftyCamButton.swift */,
+				06C5AB8024D9DAEB001D5556 /* SwiftyCamViewController.swift */,
+				06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */,
 				AEDF12C1223C161C008A702D /* AppDelegate.swift */,
 				AEDF12C3223C161C008A702D /* ViewController.swift */,
-				AE9A1660223D9ACD00E06531 /* MusicViewController.swift */,
 				AE9A1662223D9C2600E06531 /* NameViewController.swift */,
-				0615153423482C2A002DACEE /* RecordVideoViewController.swift */,
-				0615153B23483049002DACEE /* VideoHelper.swift */,
+				06C5AB6F24D9D61B001D5556 /* VideoController.swift */,
+				06C5AB7124D9D88C001D5556 /* VideoViewController.swift */,
+				06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,15 +215,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0615153C23483049002DACEE /* VideoHelper.swift in Sources */,
+				06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */,
+				06C5AB8724D9DAEB001D5556 /* Orientation.swift in Sources */,
 				AEDF12D8223C1F60008A702D /* Question.swift in Sources */,
 				06FD965B23441DA300C4E81D /* Variables.swift in Sources */,
-				AE9A1661223D9ACD00E06531 /* MusicViewController.swift in Sources */,
 				AEDF12DA223C2467008A702D /* QuestionBank.swift in Sources */,
+				06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */,
+				06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */,
+				06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */,
+				06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */,
+				06C5AB8524D9DAEB001D5556 /* SwiftyCamViewController.swift in Sources */,
 				AEDF12C4223C161C008A702D /* ViewController.swift in Sources */,
 				AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */,
+				06C5AB8624D9DAEB001D5556 /* SwiftyCamButton.swift in Sources */,
 				AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */,
-				0615153523482C2A002DACEE /* RecordVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

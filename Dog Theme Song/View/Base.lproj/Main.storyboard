@@ -182,38 +182,29 @@
             </objects>
             <point key="canvasLocation" x="220" y="133"/>
         </scene>
-        <!--Music View Controller-->
+        <!--Video Controller-->
         <scene sceneID="cU0-wr-jdu">
             <objects>
-                <viewController id="JL9-7m-ReL" customClass="MusicViewController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUS-Gj-U7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="JL9-7m-ReL" customClass="VideoController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gK6-tX-HBh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-E9-RlR">
-                                <rect key="frame" x="150" y="274" width="114" height="168"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub4-0Z-J7R">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="30"/>
-                                        <state key="normal" title="play theme song"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hal-Rh-Nx5">
-                                        <rect key="frame" x="36" y="69" width="42" height="30"/>
-                                        <state key="normal" title="pause"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMK-0q-Rjr">
-                                        <rect key="frame" x="34" y="138" width="46" height="30"/>
-                                        <state key="normal" title="restart"/>
-                                    </button>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-E9-RlR">
+                                <rect key="frame" x="192" y="343" width="30" height="30"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-Vl-GNS">
-                                <rect key="frame" x="164" y="215" width="86" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-8I-FGM">
+                                <rect key="frame" x="173" y="372" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="record video"/>
+                                <state key="normal" title="Play Song"/>
                                 <connections>
-                                    <action selector="recordVideo:" destination="JL9-7m-ReL" eventType="touchUpInside" id="4TI-PB-4wj"/>
+                                    <action selector="play:" destination="JL9-7m-ReL" eventType="touchUpInside" id="2JZ-Ar-H7N"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGW-gE-0cl" customClass="SwiftyRecordButton" customModule="Dog_Theme_Song" customModuleProvider="target">
+                                <rect key="frame" x="192" y="315" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,8 +214,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P0f-LA-hBc"/>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="eGW-gE-0cl" id="hLU-GM-Urf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUS-Gj-U7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="133"/>
         </scene>
