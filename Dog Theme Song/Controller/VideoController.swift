@@ -16,18 +16,6 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     
     var drum: AVAudioPlayer = AVAudioPlayer()
     
-    @IBAction func play(_ sender: Any) {
-        let fileURL = Bundle.main.path(forResource: "drum", ofType: "mp3")!
-        let url = URL(fileURLWithPath: fileURL)
-        do {
-            drum = try AVAudioPlayer(contentsOf: url)
-            drum.play()
-        } catch {
-            // couldn't load file :(
-        }
-        print("play song")
-        }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         shouldPrompToAppSettings = true
@@ -62,6 +50,16 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did Begin Recording")
         captureButton.growButton()
+        
+        let fileURL = Bundle.main.path(forResource: "drum", ofType: "mp3")!
+        let url = URL(fileURLWithPath: fileURL)
+        do {
+            drum = try AVAudioPlayer(contentsOf: url)
+            drum.play()
+        } catch {
+            // couldn't load file :(
+        }
+        print("play song")
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {

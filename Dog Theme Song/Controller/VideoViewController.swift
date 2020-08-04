@@ -12,6 +12,7 @@ import AVKit
 
 class VideoViewController: UIViewController {
     
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -47,11 +48,19 @@ class VideoViewController: UIViewController {
         playerController!.view.frame = view.frame
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         
+        let btnimg = UIImage(named: "x")!
+        let savebtn = UIImage(named: "save")!
+                
         let cancelButton = UIButton(frame: CGRect(x: 10.0, y: 10.0, width: 30.0, height: 30.0))
-//        cancelButton.setImage(#imageLiteral(resourceName: "cancel"), for: UIControl.State())
+        cancelButton.setImage(btnimg, for: UIControl.State())
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         view.addSubview(cancelButton)
         
+        let saveButton = UIButton(frame: CGRect(x: 60.0, y: 10.0, width: 30.0, height: 30.0))
+        saveButton.setImage(savebtn, for: UIControl.State())
+        saveButton.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
+        view.addSubview(saveButton)
+                
         
         // Allow background audio to continue to play
         do {
@@ -77,6 +86,10 @@ class VideoViewController: UIViewController {
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func saveBtn() {
+        UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
     }
     
     @objc fileprivate func playerItemDidReachEnd(_ notification: Notification) {
