@@ -86,6 +86,7 @@ class VideoViewController: UIViewController {
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
+        //todo: this should pause music and resest back to beginning
     }
     
     @objc func saveBtn() {

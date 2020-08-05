@@ -36,7 +36,7 @@
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="startButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="1CR-v7-J7C"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="startQuiz" id="aFY-cX-3rI"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="JTe-4o-cPZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -220,6 +220,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P0f-LA-hBc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cqZ-cG-5IJ"/>
                     <connections>
                         <outlet property="captureButton" destination="eGW-gE-0cl" id="hLU-GM-Urf"/>
                     </connections>

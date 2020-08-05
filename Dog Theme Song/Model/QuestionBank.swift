@@ -17,10 +17,24 @@ class QuestionBank {
     init() {
         list.append(Question(questionText: "How big is \(dogName2)?", choiceA: "big", choiceB: "medium", choiceC: "small", choiceD: "tiny", points: 1))
         
-        list.append(Question(questionText: "What size is \(dogName2)?", choiceA: "huge", choiceB: "big", choiceC: "medium", choiceD: "small", points: 10))
+        list.append(Question(questionText: "What type of hair does \(dogName2) have?", choiceA: "curly", choiceB: "short", choiceC: "long", choiceD: "fluffy", points: 10))
         
-        list.append(Question(questionText: "\(dogName2) is...", choiceA: "a good boy", choiceB: "a good girl", choiceC: "a naughty boy",
-                             choiceD: "a naughty girl", points: 100))
+        list.append(Question(questionText: "How old is \(dogName2) in dog years?", choiceA: "0-7", choiceB: "8-21",
+                             choiceC: "22-63", choiceD: "64+", points: 100))
+        
+        list.append(Question(questionText: "How is \(dogName2) behaved?", choiceA: "Goes with the rules", choiceB: "goes against the rules", choiceC: "makes the rules", choiceD: "is oblivious to the rules", points: 1000))
+        
+        list.append(Question(questionText: "Who is \(dogName2)'s best friend?", choiceA: "you", choiceB: "another dog", choiceC: "its favorite toy", choiceD: "it's a loner", points: 10000))
+        
+        list.append(Question(questionText: "What is \(dogName2)'s favorite thing to chase?", choiceA: "frisbee/ball", choiceB: "another dog", choiceC: "squirrel", choiceD: "nothing", points: 100000))
+        
+        list.append(Question(questionText: "Where is \(dogName2)'s favorite spot to get pet?", choiceA: "head", choiceB: "tummy", choiceC: "ears", choiceD: "back", points: 1000000))
+        
+        list.append(Question(questionText: "Where is \(dogName2)'s nemesis?", choiceA: "cat", choiceB: "squirrel", choiceC: "mailman", choiceD: "baths", points: 10000000))
+        
+        list.append(Question(questionText: "What is \(dogName2)'s energy level?", choiceA: "high", choiceB: "medium", choiceC: "low", choiceD: "always alseep", points: 100000000))
+        
+        list.append(Question(questionText: "What Hogwart's house would \(dogName2) be in?", choiceA: "Gryffindor", choiceB: "Slytherin", choiceC: "Hufflepuff", choiceD: "Ravenclaw", points: 1000000000))
         
     }
 }
