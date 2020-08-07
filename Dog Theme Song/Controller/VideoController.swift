@@ -8,15 +8,11 @@
 
 import UIKit
 import AVFoundation
-import Soundable
-
 
 class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
-    
-//    var ravenclaw: AVAudioPlayer = AVAudioPlayer()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         shouldPrompToAppSettings = true
@@ -52,11 +48,6 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         print("Did Begin Recording")
         captureButton.growButton()
         
-//        let fileURL = Bundle.main.path(forResource: "R", ofType: "mp3")!
-//        let url = URL(fileURLWithPath: fileURL)
-//
-//        let fileURL1 = Bundle.main.path(forResource: "meloD-1", ofType: "mp3")!
-//       let url1 = URL(fileURLWithPath: fileURL1)
         do {
             
             let sound1 = Sound(fileName: "1.mp3")

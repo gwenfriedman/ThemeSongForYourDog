@@ -46,8 +46,6 @@ class NameViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    
 }
 
 //makes the return button close the keyboard
