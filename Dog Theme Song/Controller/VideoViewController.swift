@@ -47,7 +47,7 @@ class VideoViewController: UIViewController {
         self.view.addSubview(playerController!.view)
         
         //todo: change this frame to make page take up whole space?
-        playerController!.view.frame = view.frame
+        playerController!.view.frame = view.bounds
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         
         let btnimg = UIImage(named: "x")!

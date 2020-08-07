@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="qv4-Zs-Oul">
-                                <rect key="frame" x="63" y="367.5" width="288" height="161.5"/>
+                                <rect key="frame" x="63" y="64.5" width="288" height="289"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your dog's name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-LC-N43">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="31.5"/>
@@ -30,8 +30,33 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your dog is..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-D6-me3">
+                                        <rect key="frame" x="72" y="131.5" width="144.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="rof-3B-xxK">
+                                        <rect key="frame" x="91" y="196" width="106" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-a6-ZtT">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <state key="normal" title="Male"/>
+                                                <connections>
+                                                    <action selector="maleButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="nfB-Yy-OtU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-tL-YzA">
+                                                <rect key="frame" x="56" y="0.0" width="50" height="30"/>
+                                                <state key="normal" title="Female"/>
+                                                <connections>
+                                                    <action selector="femaleButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="niW-5g-xJt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0f-8o-bwi">
-                                        <rect key="frame" x="119.5" y="131.5" width="49" height="30"/>
+                                        <rect key="frame" x="119.5" y="259" width="49" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
@@ -45,7 +70,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qv4-Zs-Oul" firstAttribute="centerX" secondItem="UXT-Go-rlu" secondAttribute="centerX" id="E7V-yP-Xmb"/>
-                            <constraint firstItem="qv4-Zs-Oul" firstAttribute="centerY" secondItem="UXT-Go-rlu" secondAttribute="centerY" id="d5B-sN-Jt0"/>
+                            <constraint firstItem="qv4-Zs-Oul" firstAttribute="centerY" secondItem="UXT-Go-rlu" secondAttribute="centerY" constant="-239.25" id="d5B-sN-Jt0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="01x-BI-0u0"/>
                     </view>
@@ -88,7 +113,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3J-id-wYI" userLabel="QuestionView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="398.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your dog's favorite activity?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOd-yc-zBZ" userLabel="Question">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your dog's favorite activity?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOd-yc-zBZ" userLabel="Question">
                                                 <rect key="frame" x="25" y="258" width="364" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
@@ -226,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUS-Gj-U7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="132.88043478260872"/>
+            <point key="canvasLocation" x="976.81159420289862" y="132.58928571428572"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="hfX-pX-Qgy">

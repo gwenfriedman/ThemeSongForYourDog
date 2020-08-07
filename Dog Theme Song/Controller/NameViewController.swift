@@ -16,19 +16,28 @@ class NameViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func startButton(_ sender: Any) {
-        
-        
         if (textField.text != "") {
             
             GlobalVariable.dogName = textField.text!
             
            print(GlobalVariable.dogName)
-            
         }
     }
     
+    @IBAction func maleButton(_ sender: Any) {
+        GlobalVariable.gender = "his"
+        GlobalVariable.gender2 = "he's"
+    }
+    
+    @IBAction func femaleButton(_ sender: Any) {
+        GlobalVariable.gender = "her"
+        GlobalVariable.gender2 = "she's"
+    }
+    
     struct GlobalVariable {
-        static var dogName = String();
+        static var dogName = String()
+        static var gender = String()
+        static var gender2 = String()
     }
     
     

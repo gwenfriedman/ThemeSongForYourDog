@@ -8,20 +8,20 @@
 
 import UIKit
 import AVFoundation
+import Soundable
 
 
 class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
     
-    var ravenclaw: AVAudioPlayer = AVAudioPlayer()
-    var m1: AVAudioPlayer = AVAudioPlayer()
+//    var ravenclaw: AVAudioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         shouldPrompToAppSettings = true
         cameraDelegate = self
-        maximumVideoDuration = 30.0
+        maximumVideoDuration = 50.0
         shouldUseDeviceOrientation = true
         allowAutoRotate = true
         audioEnabled = true
@@ -52,50 +52,38 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         print("Did Begin Recording")
         captureButton.growButton()
         
-        let fileURL = Bundle.main.path(forResource: "R", ofType: "mp3")!
-        let url = URL(fileURLWithPath: fileURL)
-        
-        let fileURL1 = Bundle.main.path(forResource: "meloD-1", ofType: "mp3")!
-       let url1 = URL(fileURLWithPath: fileURL1)
+//        let fileURL = Bundle.main.path(forResource: "R", ofType: "mp3")!
+//        let url = URL(fileURLWithPath: fileURL)
+//
+//        let fileURL1 = Bundle.main.path(forResource: "meloD-1", ofType: "mp3")!
+//       let url1 = URL(fileURLWithPath: fileURL1)
         do {
-            if(ViewController.GlobalVariable.songNumber > 4000000000) {
-//            ravenclaw = try AVAudioPlayer(contentsOf: url)
-//            ravenclaw.play()
-//
-//            m1 = try AVAudioPlayer(contentsOf: url1)
-//            m1.play()
-                
-            var anArrayOfAVPlayerItems = [
-                    AVPlayerItem(url: Bundle.main.url(forResource: "meloD-1", withExtension: "mp3")!),
-                    AVPlayerItem(url: Bundle.main.url(forResource: "meloD-2", withExtension: "mp3")!),
-                    AVPlayerItem(url: Bundle.main.url(forResource: "meloD-3", withExtension: "mp3")!)
-            ]
+            
+            let sound1 = Sound(fileName: "1.mp3")
+            let sound2 = Sound(fileName: "2.mp3")
+            let sound3 = Sound(fileName: "3.mp3")
+            let sound4 = Sound(fileName: "4.mp3")
+            let sound5 = Sound(fileName: "5.mp3")
+            let sound6 = Sound(fileName: "6.mp3")
+            let sound7 = Sound(fileName: "7.mp3")
+            let sound8 = Sound(fileName: "8.mp3")
+            let sound9 = Sound(fileName: "9.mp3")
+            let sound10 = Sound(fileName: "10.mp3")
+            let sound11 = Sound(fileName: "11.mp3")
+            let sound12 = Sound(fileName: "12.mp3")
+        
 
-                let queuePlayer = AVQueuePlayer(items: anArrayOfAVPlayerItems)
-                print(anArrayOfAVPlayerItems)
-                print(queuePlayer)
-                queuePlayer.play()
-                
+//            let sounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12]
+//            sounds.play()
+            
+            let soundsQueue = SoundsQueue(sounds: [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12])
+            soundsQueue.play()
+            
+            
+            if(ViewController.GlobalVariable.songNumber > 4000000000) {
+                let ravenclaw = Sound(fileName: "bg.mp3")
+                ravenclaw.play()
             }
-            
-            
-//            let soundsArray = ["R", "meloD-1", "meloD-2", "meloD-3", "meloD-4"]
-//            var audioItems: [AVPlayerItem] = []
-//            for audioName in soundsArray {
-//                let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: audioName, ofType: "mp3")!)
-//                let item = AVPlayerItem(url: url as URL)
-//                audioItems.append(item)
-//            }
-            
-//            var anArrayOfAVPlayerItems = [
-//                AVPlayerItem(url: Bundle.main.url(forResource: "meloD-1", withExtension: "mp3")!),
-//                AVPlayerItem(url: Bundle.main.url(forResource: "meloD-2", withExtension: "mp3")!),
-//                AVPlayerItem(url: Bundle.main.url(forResource: "meloD-3", withExtension: "mp3")!)
-//        ]
-//
-//            print(anArrayOfAVPlayerItems)
-//            let queuePlayer = AVQueuePlayer(items: anArrayOfAVPlayerItems)
-//            queuePlayer.play()
 
         } catch {
             // couldn't load file :(
@@ -105,11 +93,13 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did finish Recording")
+        Soundable.stopAll()
         captureButton.shrinkButton()
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
         let newVC = VideoViewController(videoURL: url)
+        newVC.modalPresentationStyle = .fullScreen
         self.present(newVC, animated: true, completion: nil)
     }
     
