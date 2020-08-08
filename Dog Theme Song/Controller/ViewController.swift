@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     var selectedAnswer: Int = 0
     
     struct GlobalVariable {
-        static var songNumber: Int = 0;
+//        static var songNumber: Int = 0
+        static var songList: [String] = ["0.mp3"]
     }
     
     
@@ -39,33 +40,23 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         allQuestions = QuestionBank()
-                updateQuestion()
+        updateQuestion()
     }
     
     
     //what happens when an answer is pressed
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            GlobalVariable.songNumber += allQuestions.list[questionNumber].val
-            print(GlobalVariable.songNumber)
-            print("option A")
-
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"a.mp3")
         }
         if sender.tag == 2 {
-            GlobalVariable.songNumber += ((allQuestions.list[questionNumber].val) * 2)
-            print(GlobalVariable.songNumber)
-            print("option B")
-
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"b.mp3")
         }
         if sender.tag == 3 {
-            GlobalVariable.songNumber += ((allQuestions.list[questionNumber].val) * 3)
-            print(GlobalVariable.songNumber)
-            print("option C")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"c.mp3")
         }
         if sender.tag == 4 {
-            GlobalVariable.songNumber += ((allQuestions.list[questionNumber].val) * 4)
-            print(GlobalVariable.songNumber)
-            print("option D")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"a.mp3")
         }
         
         questionNumber += 1

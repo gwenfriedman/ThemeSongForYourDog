@@ -29,9 +29,12 @@ class NameViewController: UIViewController {
         GlobalVariable.gender2 = "he's"
     }
     
-    @IBAction func femaleButton(_ sender: Any) {
+    @IBAction func femaleButton(button: UIButton) {
         GlobalVariable.gender = "her"
         GlobalVariable.gender2 = "she's"
+        
+        //todo: this will turn it red but will not switch it when male is clicked. Need radio button
+        button.setTitleColor(UIColor(red: 241/255, green: 96/255, blue: 47/255, alpha: 1.0), for: .normal)
     }
     
     struct GlobalVariable {

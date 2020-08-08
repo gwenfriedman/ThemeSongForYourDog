@@ -47,37 +47,24 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did Begin Recording")
         captureButton.growButton()
+    
+        
+        var songs: [Sound] = []
+        for n in 0...8 {
+            songs.append(Sound(fileName: ViewController.GlobalVariable.songList[n]))
+        }
+        
+        print(songs)
         
         do {
-            
-            let sound1 = Sound(fileName: "1.mp3")
-            let sound2 = Sound(fileName: "2.mp3")
-            let sound3 = Sound(fileName: "3.mp3")
-            let sound4 = Sound(fileName: "4.mp3")
-            let sound5 = Sound(fileName: "5.mp3")
-            let sound6 = Sound(fileName: "6.mp3")
-            let sound7 = Sound(fileName: "7.mp3")
-            let sound8 = Sound(fileName: "8.mp3")
-            let sound9 = Sound(fileName: "9.mp3")
-            let sound10 = Sound(fileName: "10.mp3")
-            let sound11 = Sound(fileName: "11.mp3")
-            let sound12 = Sound(fileName: "12.mp3")
-        
-
-//            let sounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12]
-//            sounds.play()
-            
-            let soundsQueue = SoundsQueue(sounds: [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12])
+            let soundsQueue = SoundsQueue(sounds: songs)
             soundsQueue.play()
             
             
-            if(ViewController.GlobalVariable.songNumber > 4000000000) {
-                let ravenclaw = Sound(fileName: "bg.mp3")
+//            if(ViewController.GlobalVariable.songNumber > 4000000000) {
+                let ravenclaw = Sound(fileName: "R.mp3")
                 ravenclaw.play()
-            }
-
-        } catch {
-            // couldn't load file :(
+//            }
         }
         print("play song")
     }

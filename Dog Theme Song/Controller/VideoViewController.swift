@@ -20,6 +20,7 @@ class VideoViewController: UIViewController {
     private var videoURL: URL
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
+    let saveButton = UIButton(frame: CGRect(x: 60.0, y: 10.0, width: 30.0, height: 30.0))
     
     init(videoURL: URL) {
         self.videoURL = videoURL
@@ -58,7 +59,7 @@ class VideoViewController: UIViewController {
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         view.addSubview(cancelButton)
         
-        let saveButton = UIButton(frame: CGRect(x: 60.0, y: 10.0, width: 30.0, height: 30.0))
+     
         saveButton.setImage(savebtn, for: UIControl.State())
         saveButton.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
         view.addSubview(saveButton)
@@ -93,6 +94,7 @@ class VideoViewController: UIViewController {
     
     @objc func saveBtn() {
         UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
+        self.saveButton.isHidden = true
     }
     
     @objc fileprivate func playerItemDidReachEnd(_ notification: Notification) {

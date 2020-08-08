@@ -22,7 +22,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="c3c-QQ-kYa">
                                         <rect key="frame" x="0.0" y="0.0" width="256.5" height="77.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your dog's name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-LC-N43">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your dog's name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-LC-N43">
                                                 <rect key="frame" x="0.0" y="0.0" width="256.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
@@ -36,22 +36,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BNP-Hk-j0k">
-                                        <rect key="frame" x="63" y="109.5" width="130.5" height="74.5"/>
+                                        <rect key="frame" x="50" y="109.5" width="156" height="74.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your dog is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-D6-me3">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your dog is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-D6-me3">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rof-3B-xxK">
-                                                <rect key="frame" x="0.0" y="38.5" width="130.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="38.5" width="156" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-a6-ZtT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="36"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <state key="normal" title="Male">
+                                                        <state key="normal" title="  Male  ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -59,13 +59,13 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-tL-YzA">
-                                                        <rect key="frame" x="66.5" y="0.0" width="64" height="36"/>
+                                                        <rect key="frame" x="75" y="0.0" width="81" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <state key="normal" title="Female">
+                                                        <state key="normal" title="  Female  ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="femaleButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="niW-5g-xJt"/>
+                                                            <action selector="femaleButtonWithButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="4Nz-ve-Kho"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -233,6 +233,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press and hold to record video and hear your dog's theme song" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iy-ys-Sys">
                                 <rect key="frame" x="40" y="786" width="334" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="0.4509578339041096" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
