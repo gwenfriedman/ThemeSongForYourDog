@@ -40,6 +40,7 @@
 		06C5AC1724DDE296001D5556 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0B24DDE295001D5556 /* 6.mp3 */; };
 		06C5AC1824DDE296001D5556 /* 10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0C24DDE296001D5556 /* 10.mp3 */; };
 		06C5AC1A24DDE32A001D5556 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC1924DDE32A001D5556 /* 1.mp3 */; };
+		06C5AC1E24DE2387001D5556 /* 22-22.png in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC1D24DE2387001D5556 /* 22-22.png */; };
 		06FD965B23441DA300C4E81D /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD965A23441DA300C4E81D /* Variables.swift */; };
 		AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1662223D9C2600E06531 /* NameViewController.swift */; };
 		AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C1223C161C008A702D /* AppDelegate.swift */; };
@@ -99,6 +100,7 @@
 		06C5AC0B24DDE295001D5556 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
 		06C5AC0C24DDE296001D5556 /* 10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10.mp3; sourceTree = "<group>"; };
 		06C5AC1924DDE32A001D5556 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		06C5AC1D24DE2387001D5556 /* 22-22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "22-22.png"; path = "../../../../Desktop/dog icons/22-22.png"; sourceTree = "<group>"; };
 		06FD965A23441DA300C4E81D /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		AE9A1662223D9C2600E06531 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		AEDF12BE223C161C008A702D /* Dog Theme Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Theme Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 		06C5ABD324DBBBB9001D5556 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				06C5AC1D24DE2387001D5556 /* 22-22.png */,
 				06C5AC1924DDE32A001D5556 /* 1.mp3 */,
 				06C5AC0124DDE294001D5556 /* 2.mp3 */,
 				06C5AC0524DDE295001D5556 /* 3.mp3 */,
@@ -308,6 +311,7 @@
 				06C5AC1324DDE296001D5556 /* 9.mp3 in Resources */,
 				AEDF12FC223C3388008A702D /* Default-568h@2x.png in Resources */,
 				06C5AC0D24DDE296001D5556 /* 2.mp3 in Resources */,
+				06C5AC1E24DE2387001D5556 /* 22-22.png in Resources */,
 				06C5AC1524DDE296001D5556 /* 5.mp3 in Resources */,
 				AEDF12C9223C161D008A702D /* Assets.xcassets in Resources */,
 				06C5AC1624DDE296001D5556 /* 4.mp3 in Resources */,

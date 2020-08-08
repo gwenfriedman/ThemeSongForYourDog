@@ -31,7 +31,7 @@ class QuestionBank {
         
         list.append(Question(questionText: "Where is \(dogName2)'s favorite spot to get pet?", choiceA: "head", choiceB: "tummy", choiceC: "ears", choiceD: "back", points: 1000000))
         
-        list.append(Question(questionText: "Where is \(dogName2)'s nemesis?", choiceA: "cat", choiceB: "squirrel", choiceC: "mailman", choiceD: "baths", points: 10000000))
+        list.append(Question(questionText: "What is \(dogName2)'s nemesis?", choiceA: "cat", choiceB: "squirrel", choiceC: "mailman", choiceD: "baths", points: 10000000))
         
         list.append(Question(questionText: "What is \(dogName2)'s energy level?", choiceA: "high", choiceB: "medium", choiceC: "low", choiceD: "always alseep", points: 100000000))
         

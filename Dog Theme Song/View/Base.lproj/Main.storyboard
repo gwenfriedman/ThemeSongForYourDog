@@ -83,8 +83,7 @@
                                         </state>
                                         <connections>
                                             <action selector="startButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="1CR-v7-J7C"/>
-                                            <action selector="submitButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="dfr-C1-uOo"/>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="3xr-lY-EGQ"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Bjj-9Q-Cro"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -35,9 +35,9 @@ class NameViewController: UIViewController {
     }
     
     struct GlobalVariable {
-        static var dogName = String()
-        static var gender = String()
-        static var gender2 = String()
+        static var dogName = "your dog"
+        static var gender = "its"
+        static var gender2 = "it's"
     }
     
     
