@@ -68,6 +68,7 @@
 		06C5AC5E24DEF7E9001D5556 /* 7c.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC3D24DEF7E8001D5556 /* 7c.mp3 */; };
 		06C5AC5F24DEF7E9001D5556 /* 7d.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC3E24DEF7E9001D5556 /* 7d.mp3 */; };
 		06C5AC6024DEF7E9001D5556 /* 2a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC3F24DEF7E9001D5556 /* 2a.mp3 */; };
+		06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AC6124DF0153001D5556 /* PlayController.swift */; };
 		06FD965B23441DA300C4E81D /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD965A23441DA300C4E81D /* Variables.swift */; };
 		AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1662223D9C2600E06531 /* NameViewController.swift */; };
 		AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C1223C161C008A702D /* AppDelegate.swift */; };
@@ -155,6 +156,7 @@
 		06C5AC3D24DEF7E8001D5556 /* 7c.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7c.mp3; path = "../../../../Downloads/sound files/7c.mp3"; sourceTree = "<group>"; };
 		06C5AC3E24DEF7E9001D5556 /* 7d.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7d.mp3; path = "../../../../Downloads/sound files/7d.mp3"; sourceTree = "<group>"; };
 		06C5AC3F24DEF7E9001D5556 /* 2a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2a.mp3; path = "../../../../Downloads/sound files/2a.mp3"; sourceTree = "<group>"; };
+		06C5AC6124DF0153001D5556 /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		06FD965A23441DA300C4E81D /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		AE9A1662223D9C2600E06531 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		AEDF12BE223C161C008A702D /* Dog Theme Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Theme Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 				06C5AB6F24D9D61B001D5556 /* VideoController.swift */,
 				06C5AB7124D9D88C001D5556 /* VideoViewController.swift */,
 				06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */,
+				06C5AC6124DF0153001D5556 /* PlayController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				AEDF12DA223C2467008A702D /* QuestionBank.swift in Sources */,
 				06C5AC0024DDE0B6001D5556 /* SoundsQueue.swift in Sources */,
 				06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */,
+				06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */,
 				06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */,
 				06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */,
 				06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */,

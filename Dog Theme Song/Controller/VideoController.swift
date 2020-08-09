@@ -53,20 +53,19 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         for n in 0...8 {
             songs.append(Sound(fileName: ViewController.GlobalVariable.songList[n]))
         }
-        
+
         print(songs)
-        
+
         do {
             let soundsQueue = SoundsQueue(sounds: songs)
             soundsQueue.play()
-            
-            
+
+
 //            if(ViewController.GlobalVariable.songNumber > 4000000000) {
                 let ravenclaw = Sound(fileName: "R.mp3")
                 ravenclaw.play()
 //            }
         }
-        print("play song")
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {

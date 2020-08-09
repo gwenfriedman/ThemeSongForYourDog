@@ -13,6 +13,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var QuestionLabel: UILabel!
+    @IBOutlet weak var QuestionNumber: UILabel!
     
     //outlet for buttons
     @IBOutlet weak var optionA: UIButton!
@@ -27,7 +28,6 @@ class ViewController: UIViewController {
     var selectedAnswer: Int = 0
     
     struct GlobalVariable {
-//        static var songNumber: Int = 0
         static var songList: [String] = ["0.mp3"]
     }
     
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"c.mp3")
         }
         if sender.tag == 4 {
-            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"a.mp3")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"d.mp3")
         }
         
         questionNumber += 1
@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         if questionNumber <= allQuestions.list.count - 1{
             
             QuestionLabel.text = allQuestions.list[questionNumber].question
+            QuestionNumber.text = String(questionNumber + 1) + "/10"
             optionA.setTitle(allQuestions.list[questionNumber].optionA , for: UIControl.State.normal)
             optionB.setTitle(allQuestions.list[questionNumber].optionB , for: UIControl.State.normal)
             optionC.setTitle(allQuestions.list[questionNumber].optionC , for: UIControl.State.normal)
