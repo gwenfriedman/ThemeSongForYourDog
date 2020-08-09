@@ -10,7 +10,7 @@ import UIKit
 
 class PlayController: UIViewController {
     
-    let bg = Sound(fileName: "R.mp3")
+    let bg = Sound(fileName: "metro.mp3")
     
     var songQueue = SoundsQueue(sounds: [])
     

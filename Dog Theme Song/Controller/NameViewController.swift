@@ -8,8 +8,7 @@
 
 import UIKit
 
-class NameViewController: UIViewController {
-
+class NameViewController: UIViewController, SSRadioButtonControllerDelegate {
     
     //name entry
     
@@ -24,18 +23,10 @@ class NameViewController: UIViewController {
         }
     }
     
-    @IBAction func maleButton(_ sender: Any) {
-        GlobalVariable.gender = "his"
-        GlobalVariable.gender2 = "he's"
-    }
+    @IBOutlet weak var maleBtn: UIButton!
+    @IBOutlet weak var femaleBtn: UIButton!
     
-    @IBAction func femaleButton(button: UIButton) {
-        GlobalVariable.gender = "her"
-        GlobalVariable.gender2 = "she's"
-        
-        //todo: this will turn it red but will not switch it when male is clicked. Need radio button
-        button.setTitleColor(UIColor(red: 241/255, green: 96/255, blue: 47/255, alpha: 1.0), for: .normal)
-    }
+    var radioButtonController: SSRadioButtonsController?
     
     struct GlobalVariable {
         static var dogName = "your dog"
@@ -47,7 +38,22 @@ class NameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        radioButtonController = SSRadioButtonsController(buttons: maleBtn, femaleBtn)
+        radioButtonController!.delegate = self
+        radioButtonController!.shouldLetDeSelect = true
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func didSelectButton(selectedButton: UIButton?) {
+        if (radioButtonController!.selectedButton() == maleBtn) {
+            GlobalVariable.gender = "his"
+            GlobalVariable.gender2 = "he's"
+        }
+        if (radioButtonController!.selectedButton() == femaleBtn) {
+            GlobalVariable.gender = "her"
+            GlobalVariable.gender2 = "she's"
+        }
     }
 }
 

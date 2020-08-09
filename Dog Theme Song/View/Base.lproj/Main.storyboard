@@ -54,9 +54,6 @@
                                                         <state key="normal" title="  Male  ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="maleButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="nfB-Yy-OtU"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-tL-YzA">
                                                         <rect key="frame" x="75" y="0.0" width="81" height="36"/>
@@ -64,9 +61,6 @@
                                                         <state key="normal" title="  Female  ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="femaleButtonWithButton:" destination="7wu-Ob-AEB" eventType="touchUpInside" id="4Nz-ve-Kho"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -97,6 +91,8 @@
                         <viewLayoutGuide key="safeArea" id="01x-BI-0u0"/>
                     </view>
                     <connections>
+                        <outlet property="femaleBtn" destination="7WT-tL-YzA" id="30u-MW-GRh"/>
+                        <outlet property="maleBtn" destination="bLS-a6-ZtT" id="NRq-a6-ySs"/>
                         <outlet property="textField" destination="2Jo-xF-jJY" id="rAw-tT-IfU"/>
                     </connections>
                 </viewController>

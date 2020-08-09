@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0670AF0F24DF88F00044A480 /* R2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0670AF0E24DF88F00044A480 /* R2.mp3 */; };
+		0670AF1124DF8AB40044A480 /* metro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0670AF1024DF8AB40044A480 /* metro.mp3 */; };
+		0670AF1424E066650044A480 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1224E066650044A480 /* SSRadioButton.swift */; };
+		0670AF1524E066650044A480 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1324E066650044A480 /* SSRadioButtonsController.swift */; };
 		06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB6F24D9D61B001D5556 /* VideoController.swift */; };
 		06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7124D9D88C001D5556 /* VideoViewController.swift */; };
 		06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */; };
@@ -95,6 +99,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0670AF0E24DF88F00044A480 /* R2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = R2.mp3; path = ../../../../Downloads/R2.mp3; sourceTree = "<group>"; };
+		0670AF1024DF8AB40044A480 /* metro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = metro.mp3; path = ../../../../Downloads/metro.mp3; sourceTree = "<group>"; };
+		0670AF1224E066650044A480 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButton.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButton.swift"; sourceTree = "<group>"; };
+		0670AF1324E066650044A480 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButtonsController.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButtonsController.swift"; sourceTree = "<group>"; };
 		06C5AB6F24D9D61B001D5556 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		06C5AB7124D9D88C001D5556 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "../../../../Downloads/SwiftyCam-master/Source/PreviewView.swift"; sourceTree = "<group>"; };
@@ -185,6 +193,8 @@
 		06C5ABD324DBBBB9001D5556 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0670AF1024DF8AB40044A480 /* metro.mp3 */,
+				0670AF0E24DF88F00044A480 /* R2.mp3 */,
 				06C5AC2324DEF7E6001D5556 /* 0.mp3 */,
 				06C5AC2124DEF7E6001D5556 /* 1a.mp3 */,
 				06C5AC2824DEF7E6001D5556 /* 1b.mp3 */,
@@ -270,6 +280,8 @@
 		AEDF12D3223C1ADF008A702D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0670AF1224E066650044A480 /* SSRadioButton.swift */,
+				0670AF1324E066650044A480 /* SSRadioButtonsController.swift */,
 				06C5ABFA24DDE0B6001D5556 /* Playable.swift */,
 				06C5ABF924DDE0B6001D5556 /* SBError.swift */,
 				06C5ABF824DDE0B6001D5556 /* Sound.swift */,
@@ -377,8 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0670AF1124DF8AB40044A480 /* metro.mp3 in Resources */,
 				06C5AC5B24DEF7E9001D5556 /* 1c.mp3 in Resources */,
 				06C5AC1024DDE296001D5556 /* 8.mp3 in Resources */,
+				0670AF0F24DF88F00044A480 /* R2.mp3 in Resources */,
 				06C5AC5724DEF7E9001D5556 /* 3b.mp3 in Resources */,
 				06C5AC4E24DEF7E9001D5556 /* 5b.mp3 in Resources */,
 				06C5AC0E24DDE296001D5556 /* bg.mp3 in Resources */,
@@ -441,6 +455,7 @@
 			files = (
 				06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */,
 				06C5AB8724D9DAEB001D5556 /* Orientation.swift in Sources */,
+				0670AF1424E066650044A480 /* SSRadioButton.swift in Sources */,
 				AEDF12D8223C1F60008A702D /* Question.swift in Sources */,
 				06C5ABFE24DDE0B6001D5556 /* SBError.swift in Sources */,
 				06FD965B23441DA300C4E81D /* Variables.swift in Sources */,
@@ -455,6 +470,7 @@
 				06C5ABFC24DDE0B6001D5556 /* Soundable.swift in Sources */,
 				06C5AB8524D9DAEB001D5556 /* SwiftyCamViewController.swift in Sources */,
 				AEDF12C4223C161C008A702D /* ViewController.swift in Sources */,
+				0670AF1524E066650044A480 /* SSRadioButtonsController.swift in Sources */,
 				AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */,
 				06C5AB8624D9DAEB001D5556 /* SwiftyCamButton.swift in Sources */,
 				AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */,
