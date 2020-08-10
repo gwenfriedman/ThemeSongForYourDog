@@ -14,6 +14,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
     
     var player: AVAudioPlayer?
+    var bg: AVAudioPlayer?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,16 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         captureButton.buttonEnabled = false
         
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+        
+        let lyrics = Bundle.main.path(forResource: "metro", ofType: "mp3")
+            do {
+                bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+                guard let bg = bg else { return }
+        
+                bg.prepareToPlay()
+            } catch let error as NSError {
+                print(error.description)
+            }
     }
     
     
@@ -39,7 +50,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
             let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -3000,timescale: 44100)))
+            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2000,timescale: 44100)))
             
             let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
             
@@ -99,8 +110,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
             player.prepareToPlay()
             player.play()
             
-            let ravenclaw = Sound(fileName: "metro.mp3")
-            ravenclaw.play()
+            bg!.play()
 
         } catch let error as NSError {
             print(error.description)
@@ -110,7 +120,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did finish Recording")
-        Soundable.stopAll()
+        bg!.stop()
         player!.stop()
         captureButton.shrinkButton()
     }

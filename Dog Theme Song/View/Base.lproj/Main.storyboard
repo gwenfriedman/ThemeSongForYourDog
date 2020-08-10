@@ -109,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT4-Bf-dFb">
-                                <rect key="frame" x="175" y="45" width="0.0" height="0.0"/>
+                                <rect key="frame" x="150" y="45" width="114" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.37647058820000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -206,8 +206,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ouR-or-tPr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CmT-5i-uJZ"/>
-                            <constraint firstItem="VT4-Bf-dFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="FVJ-CM-yZd"/>
+                            <constraint firstItem="VT4-Bf-dFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="FVJ-CM-yZd"/>
                             <constraint firstAttribute="trailing" secondItem="ouR-or-tPr" secondAttribute="trailing" id="UT4-4d-nEB"/>
+                            <constraint firstAttribute="trailing" secondItem="VT4-Bf-dFb" secondAttribute="trailing" constant="150" id="cKN-QK-9EM"/>
                             <constraint firstItem="VT4-Bf-dFb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="45" id="lYD-bY-39f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ouR-or-tPr" secondAttribute="bottom" id="y3q-m2-MZr"/>
                         </constraints>
@@ -312,32 +313,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKh-U6-IAj">
-                                <rect key="frame" x="47" y="483.5" width="320" height="119.5"/>
+                                <rect key="frame" x="47" y="481.5" width="320" height="119.5"/>
                                 <string key="text">Click the camera to record a video of your dog with the song playing. This works best in a quiet environment with your volume turned all the way up.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="center" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cnx-Te-Hp5">
-                                <rect key="frame" x="60" y="158.5" width="344" height="92"/>
+                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="Cnx-Te-Hp5">
+                                <rect key="frame" x="45" y="158.5" width="324" height="90"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-zM-Nol">
-                                        <rect key="frame" x="0.0" y="1" width="103" height="90"/>
-                                        <state key="normal" title="Button" image="play"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-zM-Nol">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="90"/>
+                                        <state key="normal" backgroundImage="play-2"/>
                                         <connections>
                                             <action selector="playButton:" destination="KAY-ND-lfm" eventType="touchUpInside" id="oBp-t5-a4h"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-pO-w9y">
-                                        <rect key="frame" x="103" y="1" width="100" height="90"/>
-                                        <state key="normal" title="Button" image="pause"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-pO-w9y">
+                                        <rect key="frame" x="119" y="0.0" width="86" height="90"/>
+                                        <state key="normal" backgroundImage="pause-2"/>
                                         <connections>
                                             <action selector="pauseBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="6CY-9z-ZZQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-DW-HQW">
-                                        <rect key="frame" x="203" y="0.0" width="141" height="92"/>
-                                        <state key="normal" title="Button" image="restart"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-DW-HQW">
+                                        <rect key="frame" x="238" y="0.0" width="86" height="90"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button" backgroundImage="restart-2"/>
                                         <connections>
                                             <action selector="restartBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="f4X-kG-tkG"/>
                                         </connections>
@@ -346,8 +348,8 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.84999999999999998" height="1"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-9k-oWD">
-                                <rect key="frame" x="120" y="350.5" width="192" height="111"/>
-                                <state key="normal" title="Button" image="cam"/>
+                                <rect key="frame" x="120" y="348.5" width="174" height="111"/>
+                                <state key="normal" backgroundImage="cam"/>
                                 <connections>
                                     <action selector="recordBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="dnj-gO-tQC"/>
                                     <segue destination="JL9-7m-ReL" kind="presentation" modalPresentationStyle="fullScreen" id="6DK-RL-M9k"/>
@@ -356,12 +358,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="GjO-9k-oWD" secondAttribute="trailing" constant="120" id="24A-i8-LKf"/>
                             <constraint firstItem="Cnx-Te-Hp5" firstAttribute="top" secondItem="gD2-xv-eeU" secondAttribute="bottom" constant="40" id="2b4-aQ-hy1"/>
                             <constraint firstItem="gD2-xv-eeU" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="20" id="3PY-Ex-Nfl"/>
                             <constraint firstItem="GjO-9k-oWD" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="120" id="8mA-7l-6HV"/>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="gKh-U6-IAj" secondAttribute="trailing" constant="47" id="Gfg-a9-XGu"/>
-                            <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="Cnx-Te-Hp5" secondAttribute="trailing" constant="10" id="MZ7-6o-mCs"/>
-                            <constraint firstItem="Cnx-Te-Hp5" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="60" id="NlU-ff-xd5"/>
+                            <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="Cnx-Te-Hp5" secondAttribute="trailing" constant="45" id="MZ7-6o-mCs"/>
+                            <constraint firstItem="Cnx-Te-Hp5" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="45" id="NlU-ff-xd5"/>
                             <constraint firstItem="GjO-9k-oWD" firstAttribute="top" secondItem="Cnx-Te-Hp5" secondAttribute="bottom" constant="100" id="Nwt-fK-paG"/>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="gD2-xv-eeU" secondAttribute="trailing" constant="20" id="SgE-gr-8IV"/>
                             <constraint firstItem="gD2-xv-eeU" firstAttribute="top" secondItem="dsA-bD-kO3" secondAttribute="top" constant="30" id="T19-Lq-Nhe"/>
@@ -377,12 +380,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4iG-7f-Hcb"/>
+        <segue reference="6DK-RL-M9k"/>
+        <segue reference="Ojs-Um-RBD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cam" width="138" height="111"/>
-        <image name="pause" width="46" height="90"/>
-        <image name="play" width="68" height="90"/>
-        <image name="restart" width="87" height="92"/>
+        <image name="pause-2" width="84" height="90"/>
+        <image name="play-2" width="84" height="90"/>
+        <image name="restart-2" width="84" height="90"/>
     </resources>
 </document>

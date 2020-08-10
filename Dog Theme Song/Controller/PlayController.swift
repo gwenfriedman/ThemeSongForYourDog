@@ -12,16 +12,17 @@ import AVFoundation
 
 class PlayController: UIViewController {
     
-    let bg = Sound(fileName: "metro.mp3")
+    var bg: AVAudioPlayer?
+    
     var player: AVAudioPlayer?
     
     @IBAction func recordBtn(_ sender: Any) {
-        bg.stop()
+        bg!.stop()
         player!.stop()
     }
     
     @IBAction func pauseBtn(_ sender: Any) {
-        bg.pause()
+        bg!.pause()
         player!.pause()
     }
     
@@ -32,8 +33,9 @@ class PlayController: UIViewController {
             print(error.localizedDescription)
         }
         
-        bg.restart()
-        bg.play()
+        bg!.pause()
+        bg!.currentTime = 0
+        bg!.play()
         player!.pause()
         player!.currentTime = 0
         player!.play()
@@ -47,8 +49,16 @@ class PlayController: UIViewController {
         print(error.localizedDescription)
     }
     
+    print(ViewController.GlobalVariable.songList)
+    
+    if (ViewController.GlobalVariable.songList[8] == "9a") {
+        print("speed up")
+            player!.rate = 2.0
+            bg!.rate = 2.0
+    }
+    
     player!.play()
-    bg.play()
+    bg!.play()
 
     }
     
@@ -59,9 +69,10 @@ func createSound(soundFiles: [String], outputFile: String) {
 
         for n in 0...8 {
             let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
+            print(sound)
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -3000,timescale: 44100)))
+            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2000,timescale: 44100)))
             
             let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
             
@@ -71,13 +82,13 @@ func createSound(soundFiles: [String], outputFile: String) {
         }
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
         
-        do {
-        try FileManager.default.removeItem(atPath: exportPath)
-        }
-        catch {print("no song")}
+//        do {
+//            print("remove song")
+//        try FileManager.default.removeItem(atPath: exportPath)
+//        }
+//        catch {print("no song")}
     
         
-
         let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
         
         export.outputURL = URL(fileURLWithPath: exportPath)
@@ -104,6 +115,24 @@ func createSound(soundFiles: [String], outputFile: String) {
             } catch let error as NSError {
                 print(error.description)
             }
+        
+        let lyrics = Bundle.main.path(forResource: "metro", ofType: "mp3")
+            do {
+                bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+                guard let bg = bg else { return }
+        
+                bg.prepareToPlay()
+            } catch let error as NSError {
+                print(error.description)
+            }
+        
+        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
+        
+        do {
+            print("remove song")
+        try FileManager.default.removeItem(atPath: exportPath)
+        }
+        catch {print("no song")}
         
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
             }
