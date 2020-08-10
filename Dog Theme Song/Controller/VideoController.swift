@@ -12,6 +12,8 @@ import AVFoundation
 class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
+    
+    var player: AVAudioPlayer?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,45 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         audioEnabled = true
         flashMode = .auto
         captureButton.buttonEnabled = false
+        
+        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+    }
+    
+    
+    func createSound(soundFiles: [String], outputFile: String) {
+    var startTime: CMTime = CMTime.zero
+    let composition: AVMutableComposition = AVMutableComposition()
+        let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
+
+        for n in 0...8 {
+            let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
+            let url: URL = URL(fileURLWithPath: sound)
+            let avAsset: AVURLAsset = AVURLAsset(url: url)
+            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -3000,timescale: 44100)))
+            
+            let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
+            
+            try! compositionAudioTrack.insertTimeRange(timeRange, of: audioTrack, at: startTime)
+                    
+            startTime = CMTimeAdd(startTime, timeRange.duration)
+        }
+        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
+        
+        do {
+        try FileManager.default.removeItem(atPath: exportPath)
+        }
+        catch {print("no song")}
+        
+        let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
+        
+        export.outputURL = URL(fileURLWithPath: exportPath)
+        export.outputFileType = AVFileType.m4a
+
+        export.exportAsynchronously {
+            if export.status == AVAssetExportSession.Status.completed {
+        NSLog("All done");
+        }
+        }
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -47,30 +88,30 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did Begin Recording")
         captureButton.growButton()
-    
         
-        var songs: [Sound] = []
-        for n in 0...8 {
-            songs.append(Sound(fileName: ViewController.GlobalVariable.songList[n]))
-        }
-
-        print(songs)
-
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
+        
         do {
-            let soundsQueue = SoundsQueue(sounds: songs)
-            soundsQueue.play()
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
 
+            player.prepareToPlay()
+            player.play()
+            
+            let ravenclaw = Sound(fileName: "metro.mp3")
+            ravenclaw.play()
 
-//            if(ViewController.GlobalVariable.songNumber > 4000000000) {
-                let ravenclaw = Sound(fileName: "metro.mp3")
-                ravenclaw.play()
-//            }
+        } catch let error as NSError {
+            print(error.description)
         }
+
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did finish Recording")
         Soundable.stopAll()
+        player!.stop()
         captureButton.shrinkButton()
     }
 

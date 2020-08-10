@@ -19,7 +19,7 @@ class QuestionBank {
     init() {
         list.append(Question(questionText: "How big is \(dogName2)?", choiceA: "big", choiceB: "medium", choiceC: "small", choiceD: "tiny", points: 1))
         
-        list.append(Question(questionText: "How old is \(dogName2)?", choiceA: "0-1", choiceB: "1-3", choiceC: "3-9", choiceD: "9+", points: 2))
+        list.append(Question(questionText: "How old is \(dogName2)?", choiceA: "10+", choiceB: "3-9", choiceC: "1-3", choiceD: "0-1", points: 2))
         
         list.append(Question(questionText: "What type of hair does \(dogName2) have?", choiceA: "curly", choiceB: "short", choiceC: "long", choiceD: "fluffy", points: 3))
     

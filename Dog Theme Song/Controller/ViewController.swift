@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     var selectedAnswer: Int = 0
     
     struct GlobalVariable {
-        static var songList: [String] = ["0.mp3"]
+        static var songList: [String] = ["0"]
     }
     
     
@@ -47,16 +47,16 @@ class ViewController: UIViewController {
     //what happens when an answer is pressed
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"a.mp3")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"a")
         }
         if sender.tag == 2 {
-            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"b.mp3")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"b")
         }
         if sender.tag == 3 {
-            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"c.mp3")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"c")
         }
         if sender.tag == 4 {
-            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"d.mp3")
+            GlobalVariable.songList.append(String(allQuestions.list[questionNumber].val)+"d")
         }
         
         questionNumber += 1
