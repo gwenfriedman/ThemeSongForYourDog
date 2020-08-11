@@ -16,6 +16,10 @@ class PlayController: UIViewController {
     
     var player: AVAudioPlayer?
     
+    var vSpinner: UIView?
+    
+    var AVFileDone: Bool = false
+    
     @IBAction func recordBtn(_ sender: Any) {
         bg!.stop()
         player!.stop()
@@ -51,18 +55,18 @@ class PlayController: UIViewController {
     
     print(ViewController.GlobalVariable.songList)
     
-    if (ViewController.GlobalVariable.songList[8] == "9a") {
-        print("speed up")
-            player!.rate = 2.0
-            bg!.rate = 2.0
-    }
+//    if (ViewController.GlobalVariable.songList[8] == "9a") {
+//        print("speed up")
+//            player!.rate = 2.0
+//            bg!.rate = 2.0
+//    }
     
     player!.play()
     bg!.play()
 
     }
     
-func createSound(soundFiles: [String], outputFile: String) {
+public func createSound(soundFiles: [String], outputFile: String) {
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
@@ -72,7 +76,7 @@ func createSound(soundFiles: [String], outputFile: String) {
             print(sound)
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2000,timescale: 44100)))
+            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2500,timescale: 44100)))
             
             let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
             
@@ -81,14 +85,7 @@ func createSound(soundFiles: [String], outputFile: String) {
             startTime = CMTimeAdd(startTime, timeRange.duration)
         }
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
-        
-//        do {
-//            print("remove song")
-//        try FileManager.default.removeItem(atPath: exportPath)
-//        }
-//        catch {print("no song")}
-    
-        
+
         let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
         
         export.outputURL = URL(fileURLWithPath: exportPath)
@@ -96,27 +93,37 @@ func createSound(soundFiles: [String], outputFile: String) {
 
         export.exportAsynchronously {
             if export.status == AVAssetExportSession.Status.completed {
-        NSLog("All done");
+                print("all done")
+                self.AVFileDone = true
         }
         }
+    
+    while AVFileDone == false {
+        // show spinner
     }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+        
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             do {
-                player = try AVAudioPlayer(contentsOf: url)
-                guard let player = player else { return }
+                self.player = try AVAudioPlayer(contentsOf: url)
+                guard let player = self.player else { return }
         
                 player.prepareToPlay()
             } catch let error as NSError {
                 print(error.description)
             }
+        }
         
-        let lyrics = Bundle.main.path(forResource: "metro", ofType: "mp3")
+        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
                 bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
                 guard let bg = bg else { return }
@@ -128,12 +135,12 @@ func createSound(soundFiles: [String], outputFile: String) {
         
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
         
-        do {
-            print("remove song")
-        try FileManager.default.removeItem(atPath: exportPath)
-        }
-        catch {print("no song")}
+//        do {
+//            print("remove song")
+//        try FileManager.default.removeItem(atPath: exportPath)
+//        }
+//        catch {print("no song")}
         
-        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+//        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
             }
 }

@@ -222,7 +222,7 @@
                         <outlet property="optionB" destination="O8e-2Z-dcd" id="T6n-r2-D6J"/>
                         <outlet property="optionC" destination="aBW-93-e7D" id="bEQ-W4-gfE"/>
                         <outlet property="optionD" destination="zHr-xO-R0T" id="uEK-kq-fYM"/>
-                        <segue destination="KAY-ND-lfm" kind="presentation" identifier="playSong" modalPresentationStyle="fullScreen" id="4iG-7f-Hcb"/>
+                        <segue destination="KAY-ND-lfm" kind="presentation" identifier="playSong" modalPresentationStyle="fullScreen" id="53y-Vl-MxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUS-Gj-U7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="133"/>
+            <point key="canvasLocation" x="2596" y="133"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="hfX-pX-Qgy">
@@ -296,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K14-7A-9DN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2512" y="133"/>
+            <point key="canvasLocation" x="3336" y="133"/>
         </scene>
         <!--Play Controller-->
         <scene sceneID="qaQ-Pa-b92">
@@ -324,14 +324,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-zM-Nol">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="90"/>
-                                        <state key="normal" backgroundImage="play-2"/>
+                                        <state key="normal" image="play-2"/>
                                         <connections>
                                             <action selector="playButton:" destination="KAY-ND-lfm" eventType="touchUpInside" id="oBp-t5-a4h"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRZ-pO-w9y">
                                         <rect key="frame" x="119" y="0.0" width="86" height="90"/>
-                                        <state key="normal" backgroundImage="pause-2"/>
+                                        <state key="normal" image="pause-2"/>
                                         <connections>
                                             <action selector="pauseBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="6CY-9z-ZZQ"/>
                                         </connections>
@@ -339,7 +339,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-DW-HQW">
                                         <rect key="frame" x="238" y="0.0" width="86" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Button" backgroundImage="restart-2"/>
+                                        <state key="normal" title="Button" image="restart-2"/>
                                         <connections>
                                             <action selector="restartBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="f4X-kG-tkG"/>
                                         </connections>
@@ -349,7 +349,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-9k-oWD">
                                 <rect key="frame" x="120" y="348.5" width="174" height="111"/>
-                                <state key="normal" backgroundImage="cam"/>
+                                <state key="normal" image="cam"/>
                                 <connections>
                                     <action selector="recordBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="dnj-gO-tQC"/>
                                     <segue destination="JL9-7m-ReL" kind="presentation" modalPresentationStyle="fullScreen" id="6DK-RL-M9k"/>
@@ -376,12 +376,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKF-Z5-9DS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.9420289855074" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1841" y="133"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6DK-RL-M9k"/>
-        <segue reference="Ojs-Um-RBD"/>
+        <segue reference="53y-Vl-MxD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cam" width="138" height="111"/>

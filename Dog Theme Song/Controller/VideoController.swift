@@ -27,9 +27,11 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         flashMode = .auto
         captureButton.buttonEnabled = false
         
-        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+        let playController = PlayController()
         
-        let lyrics = Bundle.main.path(forResource: "metro", ofType: "mp3")
+        playController.createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+        
+        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
                 bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
                 guard let bg = bg else { return }
@@ -38,43 +40,6 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
             } catch let error as NSError {
                 print(error.description)
             }
-    }
-    
-    
-    func createSound(soundFiles: [String], outputFile: String) {
-    var startTime: CMTime = CMTime.zero
-    let composition: AVMutableComposition = AVMutableComposition()
-        let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
-
-        for n in 0...8 {
-            let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
-            let url: URL = URL(fileURLWithPath: sound)
-            let avAsset: AVURLAsset = AVURLAsset(url: url)
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2000,timescale: 44100)))
-            
-            let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
-            
-            try! compositionAudioTrack.insertTimeRange(timeRange, of: audioTrack, at: startTime)
-                    
-            startTime = CMTimeAdd(startTime, timeRange.duration)
-        }
-        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
-        
-        do {
-        try FileManager.default.removeItem(atPath: exportPath)
-        }
-        catch {print("no song")}
-        
-        let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
-        
-        export.outputURL = URL(fileURLWithPath: exportPath)
-        export.outputFileType = AVFileType.m4a
-
-        export.exportAsynchronously {
-            if export.status == AVAssetExportSession.Status.completed {
-        NSLog("All done");
-        }
-        }
     }
 
     override var prefersStatusBarHidden: Bool {

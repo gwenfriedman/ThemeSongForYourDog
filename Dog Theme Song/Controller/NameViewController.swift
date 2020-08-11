@@ -42,6 +42,14 @@ class NameViewController: UIViewController, SSRadioButtonControllerDelegate {
         radioButtonController!.delegate = self
         radioButtonController!.shouldLetDeSelect = true
         
+        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
+
+        do {
+               print("remove song")
+           try FileManager.default.removeItem(atPath: exportPath)
+           }
+           catch {print("no song")}
+        
         // Do any additional setup after loading the view.
     }
     
