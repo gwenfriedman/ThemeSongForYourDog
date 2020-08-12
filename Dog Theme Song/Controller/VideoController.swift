@@ -27,10 +27,6 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         flashMode = .auto
         captureButton.buttonEnabled = false
         
-        let playController = PlayController()
-        
-        playController.createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
-        
         let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
                 bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))

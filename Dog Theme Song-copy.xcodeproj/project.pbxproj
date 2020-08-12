@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0670AF0F24DF88F00044A480 /* R2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0670AF0E24DF88F00044A480 /* R2.mp3 */; };
-		0670AF1124DF8AB40044A480 /* metro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0670AF1024DF8AB40044A480 /* metro.mp3 */; };
 		0670AF1424E066650044A480 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1224E066650044A480 /* SSRadioButton.swift */; };
 		0670AF1524E066650044A480 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1324E066650044A480 /* SSRadioButtonsController.swift */; };
-		067CEBC824E2154800718007 /* SongCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBC724E2154800718007 /* SongCreationController.swift */; };
 		067CEBCA24E239F300718007 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBC924E239F300718007 /* SpinnerViewController.swift */; };
 		06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB6F24D9D61B001D5556 /* VideoController.swift */; };
 		06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7124D9D88C001D5556 /* VideoViewController.swift */; };
@@ -21,20 +19,6 @@
 		06C5AB8724D9DAEB001D5556 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8224D9DAEB001D5556 /* Orientation.swift */; };
 		06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */; };
 		06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */; };
-		06C5AB8E24DB2AA6001D5556 /* R.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AB8D24DB2AA6001D5556 /* R.mp3 */; };
-		06C5AC0D24DDE296001D5556 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0124DDE294001D5556 /* 2.mp3 */; };
-		06C5AC0E24DDE296001D5556 /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0224DDE295001D5556 /* bg.mp3 */; };
-		06C5AC0F24DDE296001D5556 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0324DDE295001D5556 /* 11.mp3 */; };
-		06C5AC1024DDE296001D5556 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0424DDE295001D5556 /* 8.mp3 */; };
-		06C5AC1124DDE296001D5556 /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0524DDE295001D5556 /* 3.mp3 */; };
-		06C5AC1224DDE296001D5556 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0624DDE295001D5556 /* 7.mp3 */; };
-		06C5AC1324DDE296001D5556 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0724DDE295001D5556 /* 9.mp3 */; };
-		06C5AC1424DDE296001D5556 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0824DDE295001D5556 /* 12.mp3 */; };
-		06C5AC1524DDE296001D5556 /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0924DDE295001D5556 /* 5.mp3 */; };
-		06C5AC1624DDE296001D5556 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0A24DDE295001D5556 /* 4.mp3 */; };
-		06C5AC1724DDE296001D5556 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0B24DDE295001D5556 /* 6.mp3 */; };
-		06C5AC1824DDE296001D5556 /* 10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC0C24DDE296001D5556 /* 10.mp3 */; };
-		06C5AC1A24DDE32A001D5556 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC1924DDE32A001D5556 /* 1.mp3 */; };
 		06C5AC1E24DE2387001D5556 /* 22-22.png in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC1D24DE2387001D5556 /* 22-22.png */; };
 		06C5AC4024DEF7E9001D5556 /* 4a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC1F24DEF7E5001D5556 /* 4a.mp3 */; };
 		06C5AC4124DEF7E9001D5556 /* 7b.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C5AC2024DEF7E5001D5556 /* 7b.mp3 */; };
@@ -97,10 +81,8 @@
 
 /* Begin PBXFileReference section */
 		0670AF0E24DF88F00044A480 /* R2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = R2.mp3; path = ../../../../Downloads/R2.mp3; sourceTree = "<group>"; };
-		0670AF1024DF8AB40044A480 /* metro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = metro.mp3; path = ../../../../Downloads/metro.mp3; sourceTree = "<group>"; };
 		0670AF1224E066650044A480 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButton.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButton.swift"; sourceTree = "<group>"; };
 		0670AF1324E066650044A480 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButtonsController.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButtonsController.swift"; sourceTree = "<group>"; };
-		067CEBC724E2154800718007 /* SongCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCreationController.swift; sourceTree = "<group>"; };
 		067CEBC924E239F300718007 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		06C5AB6F24D9D61B001D5556 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		06C5AB7124D9D88C001D5556 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -110,20 +92,6 @@
 		06C5AB8224D9DAEB001D5556 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orientation.swift; path = "../../../../Downloads/SwiftyCam-master/Source/Orientation.swift"; sourceTree = "<group>"; };
 		06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = "../../../../Downloads/SwiftyCam-master/Source/SwiftyCamViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
-		06C5AB8D24DB2AA6001D5556 /* R.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = R.mp3; sourceTree = "<group>"; };
-		06C5AC0124DDE294001D5556 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
-		06C5AC0224DDE295001D5556 /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
-		06C5AC0324DDE295001D5556 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
-		06C5AC0424DDE295001D5556 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
-		06C5AC0524DDE295001D5556 /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
-		06C5AC0624DDE295001D5556 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
-		06C5AC0724DDE295001D5556 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
-		06C5AC0824DDE295001D5556 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
-		06C5AC0924DDE295001D5556 /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
-		06C5AC0A24DDE295001D5556 /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
-		06C5AC0B24DDE295001D5556 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
-		06C5AC0C24DDE296001D5556 /* 10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10.mp3; sourceTree = "<group>"; };
-		06C5AC1924DDE32A001D5556 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		06C5AC1D24DE2387001D5556 /* 22-22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "22-22.png"; path = "../../../../Desktop/dog icons/22-22.png"; sourceTree = "<group>"; };
 		06C5AC1F24DEF7E5001D5556 /* 4a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 4a.mp3; path = "../../../../Downloads/sound files/4a.mp3"; sourceTree = "<group>"; };
 		06C5AC2024DEF7E5001D5556 /* 7b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7b.mp3; path = "../../../../Downloads/sound files/7b.mp3"; sourceTree = "<group>"; };
@@ -187,7 +155,6 @@
 		06C5ABD324DBBBB9001D5556 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				0670AF1024DF8AB40044A480 /* metro.mp3 */,
 				0670AF0E24DF88F00044A480 /* R2.mp3 */,
 				06C5AC2324DEF7E6001D5556 /* 0.mp3 */,
 				06C5AC2124DEF7E6001D5556 /* 1a.mp3 */,
@@ -223,20 +190,6 @@
 				06C5AC2524DEF7E6001D5556 /* 8c.mp3 */,
 				06C5AC3024DEF7E7001D5556 /* 8d.mp3 */,
 				06C5AC1D24DE2387001D5556 /* 22-22.png */,
-				06C5AC1924DDE32A001D5556 /* 1.mp3 */,
-				06C5AC0124DDE294001D5556 /* 2.mp3 */,
-				06C5AC0524DDE295001D5556 /* 3.mp3 */,
-				06C5AC0A24DDE295001D5556 /* 4.mp3 */,
-				06C5AC0924DDE295001D5556 /* 5.mp3 */,
-				06C5AC0B24DDE295001D5556 /* 6.mp3 */,
-				06C5AC0624DDE295001D5556 /* 7.mp3 */,
-				06C5AC0424DDE295001D5556 /* 8.mp3 */,
-				06C5AC0724DDE295001D5556 /* 9.mp3 */,
-				06C5AC0C24DDE296001D5556 /* 10.mp3 */,
-				06C5AC0324DDE295001D5556 /* 11.mp3 */,
-				06C5AC0824DDE295001D5556 /* 12.mp3 */,
-				06C5AC0224DDE295001D5556 /* bg.mp3 */,
-				06C5AB8D24DB2AA6001D5556 /* R.mp3 */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -288,7 +241,6 @@
 				06C5AB7124D9D88C001D5556 /* VideoViewController.swift */,
 				06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */,
 				06C5AC6124DF0153001D5556 /* PlayController.swift */,
-				067CEBC724E2154800718007 /* SongCreationController.swift */,
 				067CEBC924E239F300718007 /* SpinnerViewController.swift */,
 			);
 			path = Controller;
@@ -380,46 +332,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0670AF1124DF8AB40044A480 /* metro.mp3 in Resources */,
 				06C5AC5B24DEF7E9001D5556 /* 1c.mp3 in Resources */,
-				06C5AC1024DDE296001D5556 /* 8.mp3 in Resources */,
 				0670AF0F24DF88F00044A480 /* R2.mp3 in Resources */,
 				06C5AC5724DEF7E9001D5556 /* 3b.mp3 in Resources */,
 				06C5AC4E24DEF7E9001D5556 /* 5b.mp3 in Resources */,
-				06C5AC0E24DDE296001D5556 /* bg.mp3 in Resources */,
 				06C5AC4824DEF7E9001D5556 /* 2d.mp3 in Resources */,
 				06C5AC4324DEF7E9001D5556 /* 3c.mp3 in Resources */,
 				06C5AC5624DEF7E9001D5556 /* 8a.mp3 in Resources */,
 				06C5AC5424DEF7E9001D5556 /* 6c.mp3 in Resources */,
 				06C5AC4424DEF7E9001D5556 /* 0.mp3 in Resources */,
 				06C5AC4924DEF7E9001D5556 /* 1b.mp3 in Resources */,
-				06C5AC1424DDE296001D5556 /* 12.mp3 in Resources */,
 				06C5AC5C24DEF7E9001D5556 /* 5c.mp3 in Resources */,
 				06C5AC4124DEF7E9001D5556 /* 7b.mp3 in Resources */,
-				06C5AC0F24DDE296001D5556 /* 11.mp3 in Resources */,
 				AEDF12CC223C161D008A702D /* LaunchScreen.storyboard in Resources */,
 				06C5AC4024DEF7E9001D5556 /* 4a.mp3 in Resources */,
-				06C5AC1124DDE296001D5556 /* 3.mp3 in Resources */,
 				06C5AC4D24DEF7E9001D5556 /* 3a.mp3 in Resources */,
 				06C5AC5F24DEF7E9001D5556 /* 7d.mp3 in Resources */,
 				06C5AC5224DEF7E9001D5556 /* 6b.mp3 in Resources */,
 				06C5AC5E24DEF7E9001D5556 /* 7c.mp3 in Resources */,
-				06C5AB8E24DB2AA6001D5556 /* R.mp3 in Resources */,
 				06C5AC4F24DEF7E9001D5556 /* 3d.mp3 in Resources */,
 				06C5AC5D24DEF7E9001D5556 /* 5a.mp3 in Resources */,
-				06C5AC1724DDE296001D5556 /* 6.mp3 in Resources */,
-				06C5AC1A24DDE32A001D5556 /* 1.mp3 in Resources */,
 				06C5AC4A24DEF7E9001D5556 /* 6a.mp3 in Resources */,
 				06C5AC4624DEF7E9001D5556 /* 8c.mp3 in Resources */,
-				06C5AC1324DDE296001D5556 /* 9.mp3 in Resources */,
 				06C5AC5924DEF7E9001D5556 /* 7a.mp3 in Resources */,
 				AEDF12FC223C3388008A702D /* Default-568h@2x.png in Resources */,
 				06C5AC5824DEF7E9001D5556 /* 8b.mp3 in Resources */,
-				06C5AC0D24DDE296001D5556 /* 2.mp3 in Resources */,
 				06C5AC4224DEF7E9001D5556 /* 1a.mp3 in Resources */,
 				06C5AC1E24DE2387001D5556 /* 22-22.png in Resources */,
 				06C5AC5324DEF7E9001D5556 /* 4c.mp3 in Resources */,
-				06C5AC1524DDE296001D5556 /* 5.mp3 in Resources */,
 				06C5AC5124DEF7E9001D5556 /* 8d.mp3 in Resources */,
 				06C5AC6024DEF7E9001D5556 /* 2a.mp3 in Resources */,
 				06C5AC5A24DEF7E9001D5556 /* 4d.mp3 in Resources */,
@@ -429,11 +369,8 @@
 				06C5AC5524DEF7E9001D5556 /* 6d.mp3 in Resources */,
 				06C5AC4524DEF7E9001D5556 /* 2c.mp3 in Resources */,
 				06C5AC5024DEF7E9001D5556 /* 4b.mp3 in Resources */,
-				06C5AC1624DDE296001D5556 /* 4.mp3 in Resources */,
 				06C5AC4724DEF7E9001D5556 /* 5d.mp3 in Resources */,
-				06C5AC1824DDE296001D5556 /* 10.mp3 in Resources */,
 				AEDF12C7223C161C008A702D /* Main.storyboard in Resources */,
-				06C5AC1224DDE296001D5556 /* 7.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +389,6 @@
 				AEDF12DA223C2467008A702D /* QuestionBank.swift in Sources */,
 				067CEBCA24E239F300718007 /* SpinnerViewController.swift in Sources */,
 				06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */,
-				067CEBC824E2154800718007 /* SongCreationController.swift in Sources */,
 				06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */,
 				06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */,
 				06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */,

@@ -53,13 +53,22 @@ class PlayController: UIViewController {
         print(error.localizedDescription)
     }
     
-    print(ViewController.GlobalVariable.songList)
+    player!.enableRate = true
+    bg!.enableRate = true
     
-//    if (ViewController.GlobalVariable.songList[8] == "9a") {
-//        print("speed up")
-//            player!.rate = 2.0
-//            bg!.rate = 2.0
-//    }
+    if (ViewController.GlobalVariable.songList[9] == "9a") {
+        player!.rate = 1.2
+        bg!.rate = 1.2
+    }
+    
+    if (ViewController.GlobalVariable.songList[9] == "9c") {
+        player!.rate = 0.95
+        bg!.rate = 0.95
+    }
+    if (ViewController.GlobalVariable.songList[9] == "9d") {
+        player!.rate = 0.9
+        bg!.rate = 0.9
+    }
     
     player!.play()
     bg!.play()
@@ -73,7 +82,6 @@ public func createSound(soundFiles: [String], outputFile: String) {
 
         for n in 0...8 {
             let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
-            print(sound)
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)
             let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2500,timescale: 44100)))
@@ -93,21 +101,39 @@ public func createSound(soundFiles: [String], outputFile: String) {
 
         export.exportAsynchronously {
             if export.status == AVAssetExportSession.Status.completed {
-                print("all done")
                 self.AVFileDone = true
         }
         }
     
     while AVFileDone == false {
-        // show spinner
+            }
     }
-    }
+    
+        func createSpinnerView() {
+            let child = SpinnerViewController()
+    
+            // add the spinner view controller
+            addChild(child)
+            child.view.frame = view.frame
+            view.addSubview(child.view)
+            child.didMove(toParent: self)
+    
+            // wait two seconds to simulate some work happening
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                // then remove the spinner view controller
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
+            }
+        }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
+        
+        createSpinnerView()
         
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
@@ -132,15 +158,5 @@ public func createSound(soundFiles: [String], outputFile: String) {
             } catch let error as NSError {
                 print(error.description)
             }
-        
-        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
-        
-//        do {
-//            print("remove song")
-//        try FileManager.default.removeItem(atPath: exportPath)
-//        }
-//        catch {print("no song")}
-        
-//        createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
             }
 }
