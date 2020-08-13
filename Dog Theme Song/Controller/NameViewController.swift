@@ -8,39 +8,50 @@
 
 import UIKit
 
-class NameViewController: UIViewController, SSRadioButtonControllerDelegate {
+class NameViewController: UIViewController {
     
     //name entry
     
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var submitBtn: UIButton!
+    
     @IBAction func startButton(_ sender: Any) {
         if (textField.text != "") {
-            
             GlobalVariable.dogName = textField.text!
-            
-           print(GlobalVariable.dogName)
+            }
+        if(GlobalVariable.dogName == "") {
+            GlobalVariable.dogName = "your dog"
         }
     }
-    
-    @IBOutlet weak var maleBtn: UIButton!
-    @IBOutlet weak var femaleBtn: UIButton!
-    
-    var radioButtonController: SSRadioButtonsController?
-    
+        
     struct GlobalVariable {
-        static var dogName = "your dog"
-        static var gender = "its"
-        static var gender2 = "it's"
+        static var dogName: String = ""
+        static var AVFileDone: Bool = false
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        radioButtonController = SSRadioButtonsController(buttons: maleBtn, femaleBtn)
-        radioButtonController!.delegate = self
-        radioButtonController!.shouldLetDeSelect = true
+//        // Screen width.
+//        var screenWidth: CGFloat {
+//            return UIScreen.main.bounds.width
+//        }
+//
+//        let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 70)
+//        let view = UIView(frame: rect)
+//        view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
+//        self.view.addSubview(view)
+//
+//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 70))
+//        label.textAlignment = .center
+//        label.text = "Wooof"
+//        label.textColor = .white
+//        self.view.addSubview(label)
+//
+        textField.delegate = self
+        
+        self.submitBtn.isHidden = true
         
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
 
@@ -49,19 +60,6 @@ class NameViewController: UIViewController, SSRadioButtonControllerDelegate {
            try FileManager.default.removeItem(atPath: exportPath)
            }
            catch {print("no song")}
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    func didSelectButton(selectedButton: UIButton?) {
-        if (radioButtonController!.selectedButton() == maleBtn) {
-            GlobalVariable.gender = "his"
-            GlobalVariable.gender2 = "he's"
-        }
-        if (radioButtonController!.selectedButton() == femaleBtn) {
-            GlobalVariable.gender = "her"
-            GlobalVariable.gender2 = "she's"
-        }
     }
 }
 
@@ -70,7 +68,9 @@ extension NameViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        textField.resignFirstResponder()
+        self.submitBtn.isHidden = false
+        
+        self.view.endEditing(true)
         return true
     }
 }

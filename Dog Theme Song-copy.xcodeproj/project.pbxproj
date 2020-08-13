@@ -11,6 +11,7 @@
 		0670AF1424E066650044A480 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1224E066650044A480 /* SSRadioButton.swift */; };
 		0670AF1524E066650044A480 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670AF1324E066650044A480 /* SSRadioButtonsController.swift */; };
 		067CEBCA24E239F300718007 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBC924E239F300718007 /* SpinnerViewController.swift */; };
+		067CEBCC24E58D5900718007 /* MFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBCB24E58D5900718007 /* MFController.swift */; };
 		06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB6F24D9D61B001D5556 /* VideoController.swift */; };
 		06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7124D9D88C001D5556 /* VideoViewController.swift */; };
 		06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */; };
@@ -84,6 +85,7 @@
 		0670AF1224E066650044A480 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButton.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButton.swift"; sourceTree = "<group>"; };
 		0670AF1324E066650044A480 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButtonsController.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButtonsController.swift"; sourceTree = "<group>"; };
 		067CEBC924E239F300718007 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		067CEBCB24E58D5900718007 /* MFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFController.swift; sourceTree = "<group>"; };
 		06C5AB6F24D9D61B001D5556 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		06C5AB7124D9D88C001D5556 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "../../../../Downloads/SwiftyCam-master/Source/PreviewView.swift"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */,
 				06C5AC6124DF0153001D5556 /* PlayController.swift */,
 				067CEBC924E239F300718007 /* SpinnerViewController.swift */,
+				067CEBCB24E58D5900718007 /* MFController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */,
 				06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */,
 				06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */,
+				067CEBCC24E58D5900718007 /* MFController.swift in Sources */,
 				06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */,
 				06C5AB8524D9DAEB001D5556 /* SwiftyCamViewController.swift in Sources */,
 				AEDF12C4223C161C008A702D /* ViewController.swift in Sources */,

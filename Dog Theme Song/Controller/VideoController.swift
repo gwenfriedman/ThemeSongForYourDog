@@ -64,9 +64,27 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
         
+        
         do {
             player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { return }
+            
+            player.enableRate = true
+            bg!.enableRate = true
+            
+            if (ViewController.GlobalVariable.songList[9] == "9a") {
+                player.rate = 1.2
+                bg!.rate = 1.2
+            }
+
+            if (ViewController.GlobalVariable.songList[9] == "9c") {
+                player.rate = 0.95
+                bg!.rate = 0.95
+            }
+            if (ViewController.GlobalVariable.songList[9] == "9d") {
+                player.rate = 0.9
+                bg!.rate = 0.9
+            }
 
             player.prepareToPlay()
             player.play()

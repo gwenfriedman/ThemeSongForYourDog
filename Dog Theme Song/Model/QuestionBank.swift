@@ -13,8 +13,8 @@ class QuestionBank {
     var list = [Question]()
     
     var dogName2 = NameViewController.GlobalVariable.dogName
-    var gender = NameViewController.GlobalVariable.gender
-    var gender2 = NameViewController.GlobalVariable.gender2
+    var gender = MFController.GlobalVariable.gender
+    var gender2 = MFController.GlobalVariable.gender2
         
     init() {
         list.append(Question(questionText: "How big is \(dogName2)?", choiceA: "big", choiceB: "medium", choiceC: "small", choiceD: "tiny", points: 1))

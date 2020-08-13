@@ -18,7 +18,7 @@ class PlayController: UIViewController {
     
     var vSpinner: UIView?
     
-    var AVFileDone: Bool = false
+//    var AVFileDone: Bool = false
     
     @IBAction func recordBtn(_ sender: Any) {
         bg!.stop()
@@ -60,7 +60,7 @@ class PlayController: UIViewController {
         player!.rate = 1.2
         bg!.rate = 1.2
     }
-    
+
     if (ViewController.GlobalVariable.songList[9] == "9c") {
         player!.rate = 0.95
         bg!.rate = 0.95
@@ -101,11 +101,11 @@ public func createSound(soundFiles: [String], outputFile: String) {
 
         export.exportAsynchronously {
             if export.status == AVAssetExportSession.Status.completed {
-                self.AVFileDone = true
+                NameViewController.GlobalVariable.AVFileDone = true
         }
         }
     
-    while AVFileDone == false {
+    while NameViewController.GlobalVariable.AVFileDone == false {
             }
     }
     
@@ -130,10 +130,12 @@ public func createSound(soundFiles: [String], outputFile: String) {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+             
+        if(NameViewController.GlobalVariable.AVFileDone == false) {
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
         
         createSpinnerView()
+        }
         
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
