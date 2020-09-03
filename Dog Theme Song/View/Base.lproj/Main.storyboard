@@ -363,6 +363,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="startOverBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="pHh-i7-vt9"/>
                                     <segue destination="7wu-Ob-AEB" kind="presentation" modalPresentationStyle="fullScreen" id="MmA-hg-xXC"/>
                                 </connections>
                             </button>

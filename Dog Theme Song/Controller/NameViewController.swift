@@ -10,6 +10,11 @@ import UIKit
 
 class NameViewController: UIViewController {
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.submitBtn.isHidden = false
+
+    }
+    
     //name entry
     
     @IBOutlet weak var textField: UITextField!
@@ -58,6 +63,9 @@ class NameViewController: UIViewController {
 
         textField.delegate = self
         
+        textField.addTarget(self, action: #selector(NameViewController.textFieldDidChange(_:)), for: .editingChanged)
+
+        
         self.submitBtn.isHidden = true
         
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
@@ -68,6 +76,7 @@ class NameViewController: UIViewController {
            }
            catch {print("no song")}
     }
+    
 }
 
 //makes the return button close the keyboard

@@ -31,6 +31,15 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
         }
     }
     
+    @IBAction func startOverBtn(_ sender: Any) {
+        if bg != nil {
+            bg!.stop()
+        }
+        if player != nil {
+            player!.stop()
+        }
+    }
+    
 //    @IBAction func restartBtn(_ sender: Any) {
 //        do {
 //           try AVAudioSession.sharedInstance().setCategory(.playback)
@@ -134,13 +143,15 @@ public func createSound(soundFiles: [String], outputFile: String) {
             bg!.pause()
             toggleState = 1
             playBtn.setImage(UIImage(named:"play-white.png"),for:UIControl.State.normal)
-        } else if (toggleState == 3) {
+        }
+            //todo: you need to click the button again to make this work
+        else if (toggleState == 3) {
                 do {
                    try AVAudioSession.sharedInstance().setCategory(.playback)
                 } catch(let error) {
                     print(error.localizedDescription)
                 }
-        
+
                 bg!.pause()
                 bg!.currentTime = 0
                 bg!.play()
