@@ -35,7 +35,7 @@ class QuestionBank {
         
         list.append(Question(questionText: "What is \(dogName2)'s energy level?", choiceA: "high", choiceB: "medium", choiceC: "low", choiceD: "always alseep", points: 9))
         
-        list.append(Question(questionText: "What Hogwart's house would \(dogName2) be in?", choiceA: "Gryffindor", choiceB: "Slytherin", choiceC: "Hufflepuff", choiceD: "Ravenclaw", points: 10))
+        list.append(Question(questionText: "What Hogwart's house would \(dogName2) be in?", choiceA: "Gryffindor (loyal)", choiceB: "Slytherin (sneaky)", choiceC: "Hufflepuff (friendly)", choiceD: "Ravenclaw (smart)", points: 10))
         
     }
 }

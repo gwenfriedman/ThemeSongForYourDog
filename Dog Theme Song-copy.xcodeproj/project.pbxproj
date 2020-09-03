@@ -131,7 +131,7 @@
 		06C5AC6124DF0153001D5556 /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		06FD965A23441DA300C4E81D /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		AE9A1662223D9C2600E06531 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		AEDF12BE223C161C008A702D /* Dog Theme Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Theme Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDF12BE223C161C008A702D /* Wooof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wooof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDF12C1223C161C008A702D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDF12C3223C161C008A702D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AEDF12C6223C161C008A702D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		AEDF12BF223C161C008A702D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEDF12BE223C161C008A702D /* Dog Theme Song.app */,
+				AEDF12BE223C161C008A702D /* Wooof.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 			);
 			name = "Dog Theme Song";
 			productName = "Dog Theme Song";
-			productReference = AEDF12BE223C161C008A702D /* Dog Theme Song.app */;
+			productReference = AEDF12BE223C161C008A702D /* Wooof.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -560,7 +560,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Dog-Theme-Song";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wooof;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Dog-Theme-Song";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wooof;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -28,11 +28,12 @@ class SwiftyRecordButton: SwiftyCamButton {
         
        circleBorder = CALayer()
         circleBorder.backgroundColor = UIColor.clear.cgColor
-        circleBorder.borderWidth = 6.0
+        circleBorder.borderWidth = 3.0
         circleBorder.borderColor = UIColor.white.cgColor
         circleBorder.bounds = self.bounds
         circleBorder.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         circleBorder.cornerRadius = self.frame.size.width / 2
+        self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 2, y: 2))
         layer.insertSublayer(circleBorder, at: 0)
 
     }
@@ -47,8 +48,8 @@ class SwiftyRecordButton: SwiftyCamButton {
         
         UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseOut, animations: {
             self.innerCircle.transform = CGAffineTransform(scaleX: 62.4, y: 62.4)
-            self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 1.352, y: 1.352))
-            self.circleBorder.borderWidth = (6 / 1.352)
+            self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 3, y: 3))
+            self.circleBorder.borderWidth = (6 / 3)
 
         }, completion: nil)
     }
@@ -56,8 +57,8 @@ class SwiftyRecordButton: SwiftyCamButton {
     public func shrinkButton() {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
             self.innerCircle.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 1.0, y: 1.0))
-            self.circleBorder.borderWidth = 6.0
+            self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 2, y: 2))
+            self.circleBorder.borderWidth = 3.0
         }, completion: { (success) in
             self.innerCircle.removeFromSuperview()
             self.innerCircle = nil

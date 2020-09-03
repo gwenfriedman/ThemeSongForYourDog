@@ -10,7 +10,7 @@ import UIKit
 import CoreMedia
 import AVFoundation
 
-class PlayController: UIViewController {
+class PlayController: UIViewController,AVAudioPlayerDelegate {
     
     var bg: AVAudioPlayer?
     
@@ -18,63 +18,35 @@ class PlayController: UIViewController {
     
     var vSpinner: UIView?
     
-//    var AVFileDone: Bool = false
+    var toggleState = 1
     
+    var dogName2 = NameViewController.GlobalVariable.dogName
+            
     @IBAction func recordBtn(_ sender: Any) {
-        bg!.stop()
-        player!.stop()
-    }
-    
-    @IBAction func pauseBtn(_ sender: Any) {
-        bg!.pause()
-        player!.pause()
-    }
-    
-    @IBAction func restartBtn(_ sender: Any) {
-        do {
-           try AVAudioSession.sharedInstance().setCategory(.playback)
-        } catch(let error) {
-            print(error.localizedDescription)
+        if bg != nil {
+            bg!.stop()
         }
-        
-        bg!.pause()
-        bg!.currentTime = 0
-        bg!.play()
-        player!.pause()
-        player!.currentTime = 0
-        player!.play()
+        if player != nil {
+            player!.stop()
+        }
     }
+    
+//    @IBAction func restartBtn(_ sender: Any) {
+//        do {
+//           try AVAudioSession.sharedInstance().setCategory(.playback)
+//        } catch(let error) {
+//            print(error.localizedDescription)
+//        }
+//
+//        bg!.pause()
+//        bg!.currentTime = 0
+//        bg!.play()
+//        player!.pause()
+//        player!.currentTime = 0
+//        player!.play()
+//    }
 
-@IBAction func playButton(_ sender: Any) {
-    
-    do {
-       try AVAudioSession.sharedInstance().setCategory(.playback)
-    } catch(let error) {
-        print(error.localizedDescription)
-    }
-    
-    player!.enableRate = true
-    bg!.enableRate = true
-    
-    if (ViewController.GlobalVariable.songList[9] == "9a") {
-        player!.rate = 1.2
-        bg!.rate = 1.2
-    }
 
-    if (ViewController.GlobalVariable.songList[9] == "9c") {
-        player!.rate = 0.95
-        bg!.rate = 0.95
-    }
-    if (ViewController.GlobalVariable.songList[9] == "9d") {
-        player!.rate = 0.9
-        bg!.rate = 0.9
-    }
-    
-    player!.play()
-    bg!.play()
-
-    }
-    
 public func createSound(soundFiles: [String], outputFile: String) {
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
@@ -125,11 +97,99 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 child.view.removeFromSuperview()
                 child.removeFromParent()
             }
+    }
+    
+    @objc func playSong(_ sender: Any) {
+            var playBtn = sender as! UIButton
+        if toggleState == 1 {
+            do {
+               try AVAudioSession.sharedInstance().setCategory(.playback)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
+            
+            player!.enableRate = true
+            bg!.enableRate = true
+            
+            if (ViewController.GlobalVariable.songList[9] == "9a") {
+                player!.rate = 1.2
+                bg!.rate = 1.2
+            }
+
+            if (ViewController.GlobalVariable.songList[9] == "9c") {
+                player!.rate = 0.95
+                bg!.rate = 0.95
+            }
+            if (ViewController.GlobalVariable.songList[9] == "9d") {
+                player!.rate = 0.9
+                bg!.rate = 0.9
+            }
+            player!.play()
+            bg!.play()
+            
+            toggleState = 2
+            playBtn.setImage(UIImage(named:"pause-white.png"),for:UIControl.State.normal)
+        } else if (toggleState == 2){
+            player!.pause()
+            bg!.pause()
+            toggleState = 1
+            playBtn.setImage(UIImage(named:"play-white.png"),for:UIControl.State.normal)
+        } else if (toggleState == 3) {
+                do {
+                   try AVAudioSession.sharedInstance().setCategory(.playback)
+                } catch(let error) {
+                    print(error.localizedDescription)
+                }
+        
+                bg!.pause()
+                bg!.currentTime = 0
+                bg!.play()
+                player!.pause()
+                player!.currentTime = 0
+                player!.play()
+            playBtn.setImage(UIImage(named:"restart-white.png"),for:UIControl.State.normal)
+            toggleState = 2
+            }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        print(flag)
+        print("here")
+        if flag == true{
+            toggleState = 3
         }
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Screen width.
+        var screenWidth: CGFloat {
+            return UIScreen.main.bounds.width
+        }
+
+        let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 200)
+        let view = UIView(frame: rect)
+        view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
+        self.view.addSubview(view)
+
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 115))
+        label.textAlignment = .center
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
+        label.text = " \(dogName2)'s Theme Song"
+        label.textColor = .white
+        self.view.addSubview(label)
+        
+        let btnimg = UIImage(named: "play-white")!
+        
+        let centered = (screenWidth / 2) - 50
+                
+        let playButton = UIButton(frame: CGRect(x: centered, y: 85, width: 100, height: 100))
+        playButton.setImage(btnimg, for: UIControl.State())
+        playButton.addTarget(self, action: #selector(playSong), for: .touchUpInside)
+        view.addSubview(playButton)
+        
              
         if(NameViewController.GlobalVariable.AVFileDone == false) {
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
@@ -146,6 +206,7 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 guard let player = self.player else { return }
         
                 player.prepareToPlay()
+                player.delegate = self
             } catch let error as NSError {
                 print(error.description)
             }

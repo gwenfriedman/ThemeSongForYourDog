@@ -101,6 +101,8 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         print("Did finish Recording")
         bg!.stop()
         player!.stop()
+        bg!.currentTime = 0
+        player!.currentTime = 0
         captureButton.shrinkButton()
     }
 

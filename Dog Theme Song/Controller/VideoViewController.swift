@@ -20,7 +20,8 @@ class VideoViewController: UIViewController {
     private var videoURL: URL
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
-    let saveButton = UIButton(frame: CGRect(x: 60.0, y: 10.0, width: 30.0, height: 30.0))
+    let saveButton = UIButton(frame: CGRect(x: 85, y: 40, width: 30.0, height: 30.0))
+    var saved = false
     
     init(videoURL: URL) {
         self.videoURL = videoURL
@@ -47,18 +48,16 @@ class VideoViewController: UIViewController {
         self.addChild(playerController!)
         self.view.addSubview(playerController!.view)
         
-        //todo: change this frame to make page take up whole space?
         playerController!.view.frame = view.bounds
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         
-        let btnimg = UIImage(named: "x")!
-        let savebtn = UIImage(named: "save")!
+        let btnimg = UIImage(named: "x-white")!
+        let savebtn = UIImage(named: "save-white")!
                 
-        let cancelButton = UIButton(frame: CGRect(x: 10.0, y: 10.0, width: 30.0, height: 30.0))
+        let cancelButton = UIButton(frame: CGRect(x: 20, y: 40, width: 30.0, height: 30.0))
         cancelButton.setImage(btnimg, for: UIControl.State())
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         view.addSubview(cancelButton)
-        
      
         saveButton.setImage(savebtn, for: UIControl.State())
         saveButton.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
@@ -89,12 +88,15 @@ class VideoViewController: UIViewController {
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
-        //todo: this should pause music and resest back to beginning
     }
     
     @objc func saveBtn() {
+        if(saved == false) {
         UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
-        self.saveButton.isHidden = true
+        let saveCheck = UIImage(named: "check-white")!
+        self.saveButton.setImage(saveCheck, for: UIControl.State())
+        saved = true
+        }
     }
     
     @objc fileprivate func playerItemDidReachEnd(_ notification: Notification) {
