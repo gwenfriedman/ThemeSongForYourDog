@@ -17,10 +17,14 @@ class VideoViewController: UIViewController {
         return true
     }
     
+    var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     private var videoURL: URL
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
-    let saveButton = UIButton(frame: CGRect(x: 85, y: 40, width: 30.0, height: 30.0))
+    var saveButton : UIButton?
     var saved = false
     
     init(videoURL: URL) {
@@ -54,14 +58,15 @@ class VideoViewController: UIViewController {
         let btnimg = UIImage(named: "x-white")!
         let savebtn = UIImage(named: "save-white")!
                 
-        let cancelButton = UIButton(frame: CGRect(x: 20, y: 40, width: 30.0, height: 30.0))
+        let cancelButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30.0, height: 30.0))
         cancelButton.setImage(btnimg, for: UIControl.State())
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         view.addSubview(cancelButton)
      
-        saveButton.setImage(savebtn, for: UIControl.State())
-        saveButton.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
-        view.addSubview(saveButton)
+        saveButton = UIButton(frame: CGRect(x: screenWidth - 60, y: 20, width: 30.0, height: 30.0))
+        saveButton!.setImage(savebtn, for: UIControl.State())
+        saveButton!.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
+        view.addSubview(saveButton!)
         
         // Allow background audio to continue to play
         do {
@@ -93,20 +98,16 @@ class VideoViewController: UIViewController {
         if(saved == false) {
         UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
         let saveCheck = UIImage(named: "check-white")!
-            // Screen width.
-            var screenWidth: CGFloat {
-                return UIScreen.main.bounds.width
-            }
-        self.saveButton.setImage(saveCheck, for: UIControl.State())
-             let rect = CGRect(x: 0, y: 100, width: screenWidth, height: 70)
+            self.saveButton!.setImage(saveCheck, for: UIControl.State())
+             let rect = CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70)
             let view = UIView(frame: rect)
-            view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
+            view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 40)
             self.view.addSubview(view)
 
-            let label = UILabel(frame: CGRect(x: 0, y: 100, width: screenWidth, height: 70))
+            let label = UILabel(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70))
             label.textAlignment = .center
             label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
-            label.text = "Share on social media using #WooofThemeSong."
+            label.text = "Share on social media using #WooofThemeSong"
              label.numberOfLines = 0
             label.textColor = .white
             self.view.addSubview(label)

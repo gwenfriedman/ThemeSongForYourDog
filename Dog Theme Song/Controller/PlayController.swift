@@ -21,6 +21,8 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
     var toggleState = 1
     
     var dogName2 = NameViewController.GlobalVariable.dogName
+    
+    var playButton: UIButton?
             
     @IBAction func recordBtn(_ sender: Any) {
         if bg != nil {
@@ -38,25 +40,12 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
         if player != nil {
             player!.stop()
         }
+        NameViewController.GlobalVariable.AVFileDone = false
+        ViewController.GlobalVariable.songList = ["0"]
     }
-    
-//    @IBAction func restartBtn(_ sender: Any) {
-//        do {
-//           try AVAudioSession.sharedInstance().setCategory(.playback)
-//        } catch(let error) {
-//            print(error.localizedDescription)
-//        }
-//
-//        bg!.pause()
-//        bg!.currentTime = 0
-//        bg!.play()
-//        player!.pause()
-//        player!.currentTime = 0
-//        player!.play()
-//    }
-
 
 public func createSound(soundFiles: [String], outputFile: String) {
+    print(soundFiles)
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
@@ -108,7 +97,7 @@ public func createSound(soundFiles: [String], outputFile: String) {
             }
     }
     
-    @objc func playSong(_ sender: Any) {
+    @objc func playSong(_ sender: Any, ts: Int) {
             var playBtn = sender as! UIButton
         if toggleState == 1 {
             do {
@@ -144,7 +133,6 @@ public func createSound(soundFiles: [String], outputFile: String) {
             toggleState = 1
             playBtn.setImage(UIImage(named:"play-white.png"),for:UIControl.State.normal)
         }
-            //todo: you need to click the button again to make this work
         else if (toggleState == 3) {
                 do {
                    try AVAudioSession.sharedInstance().setCategory(.playback)
@@ -158,7 +146,7 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 player!.pause()
                 player!.currentTime = 0
                 player!.play()
-            playBtn.setImage(UIImage(named:"restart-white.png"),for:UIControl.State.normal)
+            playBtn.setImage(UIImage(named:"pause-white.png"),for:UIControl.State.normal)
             toggleState = 2
             }
     }
@@ -168,24 +156,26 @@ public func createSound(soundFiles: [String], outputFile: String) {
         print("here")
         if flag == true{
             toggleState = 3
+            self.playButton?.setImage(UIImage(named:"restart-white.png"),for:UIControl.State.normal)
         }
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view did load")
         
         // Screen width.
         var screenWidth: CGFloat {
             return UIScreen.main.bounds.width
         }
 
-        let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 200)
+        let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 210)
         let view = UIView(frame: rect)
         view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
         self.view.addSubview(view)
 
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 115))
+        let label = UILabel(frame: CGRect(x: 0, y: 15, width: screenWidth, height: 115))
         label.textAlignment = .center
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
         label.text = " \(dogName2)'s Theme Song"
@@ -196,13 +186,14 @@ public func createSound(soundFiles: [String], outputFile: String) {
         
         let centered = (screenWidth / 2) - 50
                 
-        let playButton = UIButton(frame: CGRect(x: centered, y: 85, width: 100, height: 100))
-        playButton.setImage(btnimg, for: UIControl.State())
-        playButton.addTarget(self, action: #selector(playSong), for: .touchUpInside)
-        view.addSubview(playButton)
+        playButton = UIButton(frame: CGRect(x: centered, y: 95, width: 100, height: 100))
+        playButton!.setImage(btnimg, for: UIControl.State())
+        playButton!.addTarget(self, action: #selector(playSong), for: .touchUpInside)
+        view.addSubview(playButton!)
         
-             
+        print("before if")
         if(NameViewController.GlobalVariable.AVFileDone == false) {
+            print("in if")
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
         
         createSpinnerView()

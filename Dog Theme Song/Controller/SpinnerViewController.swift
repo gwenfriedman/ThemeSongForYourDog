@@ -8,18 +8,45 @@
 
 import UIKit
 
+extension UIImageView {
+    static func fromGif(frame: CGRect, resourceName: String) -> UIImageView? {
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: "gif") else {
+            print("Gif does not exist at that path")
+            return nil
+        }
+        let url = URL(fileURLWithPath: path)
+        guard let gifData = try? Data(contentsOf: url),
+            let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
+        var images = [UIImage]()
+        let imageCount = CGImageSourceGetCount(source)
+        for i in 0 ..< imageCount {
+            if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
+                images.append(UIImage(cgImage: image))
+            }
+        }
+        let gifImageView = UIImageView(frame: frame)
+        gifImageView.animationImages = images
+        gifImageView.animationDuration = 2.0
+        return gifImageView
+    }
+}
+
+
 class SpinnerViewController: UIViewController {
-    var spinner = UIActivityIndicatorView(style: .whiteLarge)
+    
+    // Screen width.
+    var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
 
     override func loadView() {
         view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
-        view.addSubview(spinner)
-
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.backgroundColor = UIColor(white: 0, alpha: 0.8)
+        
+        guard let loadingImageView = UIImageView.fromGif(frame: view.frame, resourceName: "loading-white") else {
+            return }
+        loadingImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        view.addSubview(loadingImageView)
+        loadingImageView.startAnimating()
     }
 }

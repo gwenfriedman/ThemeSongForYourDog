@@ -343,7 +343,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-9k-oWD">
                                 <rect key="frame" x="120" y="282" width="174" height="111"/>
-                                <state key="normal" image="cam"/>
+                                <state key="normal" image="camera-red"/>
                                 <connections>
                                     <action selector="recordBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="dnj-gO-tQC"/>
                                     <segue destination="JL9-7m-ReL" kind="presentation" modalPresentationStyle="fullScreen" id="6DK-RL-M9k"/>
@@ -392,11 +392,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6DK-RL-M9k"/>
         <segue reference="nlK-cI-d58"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow" width="49" height="30"/>
-        <image name="cam" width="138" height="111"/>
+        <image name="camera-red" width="138" height="111"/>
     </resources>
 </document>
