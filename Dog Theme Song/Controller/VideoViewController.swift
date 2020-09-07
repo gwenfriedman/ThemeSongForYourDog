@@ -27,6 +27,12 @@ class VideoViewController: UIViewController {
     var saveButton : UIButton?
     var saved = false
     
+    var rect : CGRect?
+    var bgView : UIView?
+    var label : UILabel?
+    var xButton : UIButton?
+
+    
     init(videoURL: URL) {
         self.videoURL = videoURL
         super.init(nibName: nil, bundle: nil)
@@ -94,24 +100,39 @@ class VideoViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func close() {
+        self.bgView!.isHidden = true
+        self.label!.isHidden = true
+        self.xButton!.isHidden = true
+    }
+    
     @objc func saveBtn() {
         if(saved == false) {
         UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
         let saveCheck = UIImage(named: "check-white")!
             self.saveButton!.setImage(saveCheck, for: UIControl.State())
-             let rect = CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70)
-            let view = UIView(frame: rect)
-            view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 40)
-            self.view.addSubview(view)
+            rect = CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70)
+            bgView = UIView(frame: rect!)
+            bgView!.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 40)
+            self.view.addSubview(bgView!)
+            
+            label = UILabel(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70))
+            label!.textAlignment = .center
+            label!.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
+            label!.text = "Share on social media using #WooofThemeSong"
+            label!.numberOfLines = 0
+            label!.textColor = .white
+            self.view.addSubview(label!)
+            
+            let btnimg = UIImage(named: "x-white")!
 
-            let label = UILabel(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70))
-            label.textAlignment = .center
-            label.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
-            label.text = "Share on social media using #WooofThemeSong"
-             label.numberOfLines = 0
-            label.textColor = .white
-            self.view.addSubview(label)
+            xButton = UIButton(frame: CGRect(x: 35, y: 105, width: 15, height: 15))
+            xButton!.setImage(btnimg, for: UIControl.State())
+            xButton!.addTarget(self, action: #selector(close), for: .touchUpInside)
+            view.addSubview(xButton!)
+            
         saved = true
+            
         }
     }
     

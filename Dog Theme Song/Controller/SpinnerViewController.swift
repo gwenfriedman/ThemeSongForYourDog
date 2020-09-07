@@ -41,11 +41,22 @@ class SpinnerViewController: UIViewController {
 
     override func loadView() {
         view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.8)
+        view.backgroundColor = UIColor(white: 0, alpha: 1)
         
-        guard let loadingImageView = UIImageView.fromGif(frame: view.frame, resourceName: "loading-white") else {
+        var screenWidth: CGFloat {
+            return UIScreen.main.bounds.width
+        }
+        
+        var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+        let centerX = screenWidth / 2
+        let centerY = screenHeight / 2
+            
+        guard let loadingImageView = UIImageView.fromGif(frame: view.frame, resourceName: "loading-big") else {
             return }
         loadingImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingImageView.center = CGPoint(x: centerX, y: centerY)
         view.addSubview(loadingImageView)
         loadingImageView.startAnimating()
     }

@@ -13,7 +13,7 @@
 		067CEBCA24E239F300718007 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBC924E239F300718007 /* SpinnerViewController.swift */; };
 		067CEBCC24E58D5900718007 /* MFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CEBCB24E58D5900718007 /* MFController.swift */; };
 		067CEBD02501BA7E00718007 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 067CEBCF2501BA2000718007 /* loading.gif */; };
-		067CEBD22501C27F00718007 /* loading-white.gif in Resources */ = {isa = PBXBuildFile; fileRef = 067CEBD12501C27F00718007 /* loading-white.gif */; };
+		067CEBD42506D05800718007 /* loading-big.gif in Resources */ = {isa = PBXBuildFile; fileRef = 067CEBD32506D05700718007 /* loading-big.gif */; };
 		06C5AB7024D9D61B001D5556 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB6F24D9D61B001D5556 /* VideoController.swift */; };
 		06C5AB7224D9D88C001D5556 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7124D9D88C001D5556 /* VideoViewController.swift */; };
 		06C5AB8424D9DAEB001D5556 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */; };
@@ -89,7 +89,7 @@
 		067CEBC924E239F300718007 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		067CEBCB24E58D5900718007 /* MFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFController.swift; sourceTree = "<group>"; };
 		067CEBCF2501BA2000718007 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
-		067CEBD12501C27F00718007 /* loading-white.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "loading-white.gif"; path = "../../Desktop/dog gif/loading-white.gif"; sourceTree = "<group>"; };
+		067CEBD32506D05700718007 /* loading-big.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "loading-big.gif"; path = "../../Desktop/dog gif/loading-big.gif"; sourceTree = "<group>"; };
 		06C5AB6F24D9D61B001D5556 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		06C5AB7124D9D88C001D5556 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		06C5AB7F24D9DAEB001D5556 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "../../../../Downloads/SwiftyCam-master/Source/PreviewView.swift"; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 		AEDF12B5223C161C008A702D = {
 			isa = PBXGroup;
 			children = (
-				067CEBD12501C27F00718007 /* loading-white.gif */,
+				067CEBD32506D05700718007 /* loading-big.gif */,
 				AEDF12FB223C3388008A702D /* Default-568h@2x.png */,
 				AEDF12C0223C161C008A702D /* Dog Theme Song */,
 				AEDF12BF223C161C008A702D /* Products */,
@@ -341,7 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				067CEBD22501C27F00718007 /* loading-white.gif in Resources */,
+				067CEBD42506D05800718007 /* loading-big.gif in Resources */,
 				067CEBD02501BA7E00718007 /* loading.gif in Resources */,
 				06C5AC5B24DEF7E9001D5556 /* 1c.mp3 in Resources */,
 				0670AF0F24DF88F00044A480 /* R2.mp3 in Resources */,

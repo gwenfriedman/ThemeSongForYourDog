@@ -45,7 +45,6 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
     }
 
 public func createSound(soundFiles: [String], outputFile: String) {
-    print(soundFiles)
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
@@ -153,7 +152,6 @@ public func createSound(soundFiles: [String], outputFile: String) {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
         print(flag)
-        print("here")
         if flag == true{
             toggleState = 3
             self.playButton?.setImage(UIImage(named:"restart-white.png"),for:UIControl.State.normal)
@@ -163,7 +161,6 @@ public func createSound(soundFiles: [String], outputFile: String) {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
         
         // Screen width.
         var screenWidth: CGFloat {
@@ -191,9 +188,7 @@ public func createSound(soundFiles: [String], outputFile: String) {
         playButton!.addTarget(self, action: #selector(playSong), for: .touchUpInside)
         view.addSubview(playButton!)
         
-        print("before if")
         if(NameViewController.GlobalVariable.AVFileDone == false) {
-            print("in if")
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
         
         createSpinnerView()
