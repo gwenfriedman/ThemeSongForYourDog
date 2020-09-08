@@ -71,10 +71,9 @@ class NameViewController: UIViewController {
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
 
         do {
-               print("remove song")
            try FileManager.default.removeItem(atPath: exportPath)
            }
-           catch {print("no song")}
+           catch {}
     }
     
 }

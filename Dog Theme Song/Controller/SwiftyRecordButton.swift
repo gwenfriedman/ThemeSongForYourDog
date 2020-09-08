@@ -13,6 +13,10 @@ class SwiftyRecordButton: SwiftyCamButton {
     private var circleBorder: CALayer!
     private var innerCircle: UIView!
     
+    var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         drawButton()
@@ -30,8 +34,9 @@ class SwiftyRecordButton: SwiftyCamButton {
         circleBorder.backgroundColor = UIColor.clear.cgColor
         circleBorder.borderWidth = 3.0
         circleBorder.borderColor = UIColor.white.cgColor
-        circleBorder.bounds = self.bounds
         circleBorder.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+//        circleBorder.position = CGPoint(x: screenWidth / 2, y: self.bounds.midY)
+        circleBorder.bounds = self.bounds
         circleBorder.cornerRadius = self.frame.size.width / 2
         self.circleBorder.setAffineTransform(CGAffineTransform(scaleX: 2, y: 2))
         layer.insertSublayer(circleBorder, at: 0)
@@ -41,6 +46,7 @@ class SwiftyRecordButton: SwiftyCamButton {
     public  func growButton() {
         innerCircle = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         innerCircle.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+//        innerCircle.center = CGPoint(x: screenWidth / 2, y: self.bounds.midY)
         innerCircle.backgroundColor = UIColor.red
         innerCircle.layer.cornerRadius = innerCircle.frame.size.width / 2
         innerCircle.clipsToBounds = true

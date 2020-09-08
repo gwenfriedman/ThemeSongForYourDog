@@ -12,9 +12,10 @@ import AVFoundation
 
 class PlayController: UIViewController,AVAudioPlayerDelegate {
     
-    var bg: AVAudioPlayer?
-    
-    var player: AVAudioPlayer?
+    struct GlobalVariable {
+         static var bg: AVAudioPlayer?
+         static var player: AVAudioPlayer?
+     }
     
     var vSpinner: UIView?
     
@@ -25,26 +26,29 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
     var playButton: UIButton?
             
     @IBAction func recordBtn(_ sender: Any) {
-        if bg != nil {
-            bg!.stop()
+        if GlobalVariable.bg != nil {
+            GlobalVariable.bg!.stop()
+            GlobalVariable.bg!.currentTime = 0
         }
-        if player != nil {
-            player!.stop()
+        if GlobalVariable.player != nil {
+            GlobalVariable.player!.stop()
+            GlobalVariable.player!.currentTime = 0
         }
     }
     
     @IBAction func startOverBtn(_ sender: Any) {
-        if bg != nil {
-            bg!.stop()
+        if GlobalVariable.bg != nil {
+            GlobalVariable.bg!.stop()
         }
-        if player != nil {
-            player!.stop()
+        if GlobalVariable.player != nil {
+            GlobalVariable.player!.stop()
         }
         NameViewController.GlobalVariable.AVFileDone = false
         ViewController.GlobalVariable.songList = ["0"]
     }
 
 public func createSound(soundFiles: [String], outputFile: String) {
+    print(soundFiles)
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
@@ -105,30 +109,30 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 print(error.localizedDescription)
             }
             
-            player!.enableRate = true
-            bg!.enableRate = true
+            GlobalVariable.player!.enableRate = true
+            GlobalVariable.bg!.enableRate = true
             
             if (ViewController.GlobalVariable.songList[9] == "9a") {
-                player!.rate = 1.2
-                bg!.rate = 1.2
+                GlobalVariable.player!.rate = 1.2
+                GlobalVariable.bg!.rate = 1.2
             }
 
             if (ViewController.GlobalVariable.songList[9] == "9c") {
-                player!.rate = 0.95
-                bg!.rate = 0.95
+                GlobalVariable.player!.rate = 0.95
+                GlobalVariable.bg!.rate = 0.95
             }
             if (ViewController.GlobalVariable.songList[9] == "9d") {
-                player!.rate = 0.9
-                bg!.rate = 0.9
+                GlobalVariable.player!.rate = 0.9
+                GlobalVariable.bg!.rate = 0.9
             }
-            player!.play()
-            bg!.play()
+            GlobalVariable.player!.play()
+            GlobalVariable.bg!.play()
             
             toggleState = 2
             playBtn.setImage(UIImage(named:"pause-white.png"),for:UIControl.State.normal)
         } else if (toggleState == 2){
-            player!.pause()
-            bg!.pause()
+            GlobalVariable.player!.pause()
+            GlobalVariable.bg!.pause()
             toggleState = 1
             playBtn.setImage(UIImage(named:"play-white.png"),for:UIControl.State.normal)
         }
@@ -139,12 +143,12 @@ public func createSound(soundFiles: [String], outputFile: String) {
                     print(error.localizedDescription)
                 }
 
-                bg!.pause()
-                bg!.currentTime = 0
-                bg!.play()
-                player!.pause()
-                player!.currentTime = 0
-                player!.play()
+                GlobalVariable.bg!.pause()
+                GlobalVariable.bg!.currentTime = 0
+                GlobalVariable.bg!.play()
+                GlobalVariable.player!.pause()
+                GlobalVariable.player!.currentTime = 0
+                GlobalVariable.player!.play()
             playBtn.setImage(UIImage(named:"pause-white.png"),for:UIControl.State.normal)
             toggleState = 2
             }
@@ -192,15 +196,14 @@ public func createSound(soundFiles: [String], outputFile: String) {
         createSound(soundFiles: ViewController.GlobalVariable.songList, outputFile: "dog-theme-song")
         
         createSpinnerView()
-        }
         
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             do {
-                self.player = try AVAudioPlayer(contentsOf: url)
-                guard let player = self.player else { return }
+                GlobalVariable.player = try AVAudioPlayer(contentsOf: url)
+                guard let player = GlobalVariable.player else { print("no lyrics"); return }
         
                 player.prepareToPlay()
                 player.delegate = self
@@ -211,12 +214,13 @@ public func createSound(soundFiles: [String], outputFile: String) {
         
         let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
-                bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
-                guard let bg = bg else { return }
+                GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+                guard let bg = GlobalVariable.bg else { return }
         
                 bg.prepareToPlay()
             } catch let error as NSError {
                 print(error.description)
             }
             }
+    }
 }

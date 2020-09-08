@@ -12,9 +12,6 @@ import AVFoundation
 class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
-    
-    var player: AVAudioPlayer?
-    var bg: AVAudioPlayer?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +26,8 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         
         let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
-                bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
-                guard let bg = bg else { return }
+                PlayController.GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+                guard let bg = PlayController.GlobalVariable.bg else { return }
         
                 bg.prepareToPlay()
             } catch let error as NSError {
@@ -61,35 +58,24 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         print("Did Begin Recording")
         captureButton.growButton()
         
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let url = documentsURL.appendingPathComponent("dog-theme-song.m4a")
-        
-        
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.enableRate = true
-            bg!.enableRate = true
             
             if (ViewController.GlobalVariable.songList[9] == "9a") {
-                player.rate = 1.2
-                bg!.rate = 1.2
+                PlayController.GlobalVariable.player!.rate = 1.2
+                PlayController.GlobalVariable.bg!.rate = 1.2
             }
 
             if (ViewController.GlobalVariable.songList[9] == "9c") {
-                player.rate = 0.95
-                bg!.rate = 0.95
+                PlayController.GlobalVariable.player!.rate = 0.95
+                PlayController.GlobalVariable.bg!.rate = 0.95
             }
             if (ViewController.GlobalVariable.songList[9] == "9d") {
-                player.rate = 0.9
-                bg!.rate = 0.9
+                PlayController.GlobalVariable.player!.rate = 0.9
+                PlayController.GlobalVariable.bg!.rate = 0.9
             }
-
-            player.prepareToPlay()
-            player.play()
+            PlayController.GlobalVariable.player?.play()
             
-            bg!.play()
+            PlayController.GlobalVariable.bg?.play()
 
         } catch let error as NSError {
             print(error.description)
@@ -99,10 +85,10 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did finish Recording")
-        bg!.stop()
-        player!.stop()
-        bg!.currentTime = 0
-        player!.currentTime = 0
+        PlayController.GlobalVariable.bg!.stop()
+        PlayController.GlobalVariable.player!.stop()
+        PlayController.GlobalVariable.bg!.currentTime = 0
+        PlayController.GlobalVariable.player!.currentTime = 0
         captureButton.shrinkButton()
     }
 
