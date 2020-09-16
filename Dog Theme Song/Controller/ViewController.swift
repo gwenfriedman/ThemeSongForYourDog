@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         if questionNumber <= allQuestions.list.count - 1{
             
             QuestionLabel.text = allQuestions.list[questionNumber].question
-            QuestionNumber.text = String(questionNumber + 1) + "/10"
+            QuestionNumber.text = String(questionNumber + 1) + "/9"
             optionA.setTitle(allQuestions.list[questionNumber].optionA , for: UIControl.State.normal)
             optionB.setTitle(allQuestions.list[questionNumber].optionB , for: UIControl.State.normal)
             optionC.setTitle(allQuestions.list[questionNumber].optionC , for: UIControl.State.normal)

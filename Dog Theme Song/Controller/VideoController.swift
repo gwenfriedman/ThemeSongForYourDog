@@ -24,15 +24,15 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         flashMode = .auto
         captureButton.buttonEnabled = false
         
-        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
-            do {
-                PlayController.GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
-                guard let bg = PlayController.GlobalVariable.bg else { return }
-        
-                bg.prepareToPlay()
-            } catch let error as NSError {
-                print(error.description)
-            }
+//        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
+//            do {
+//                PlayController.GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+//                guard let bg = PlayController.GlobalVariable.bg else { return }
+//
+//                bg.prepareToPlay()
+//            } catch let error as NSError {
+//                print(error.description)
+//            }
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -60,19 +60,19 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         
         do {
             
-            if (ViewController.GlobalVariable.songList[9] == "9a") {
-                PlayController.GlobalVariable.player!.rate = 1.2
-                PlayController.GlobalVariable.bg!.rate = 1.2
-            }
-
-            if (ViewController.GlobalVariable.songList[9] == "9c") {
-                PlayController.GlobalVariable.player!.rate = 0.95
-                PlayController.GlobalVariable.bg!.rate = 0.95
-            }
-            if (ViewController.GlobalVariable.songList[9] == "9d") {
-                PlayController.GlobalVariable.player!.rate = 0.9
-                PlayController.GlobalVariable.bg!.rate = 0.9
-            }
+//            if (ViewController.GlobalVariable.songList[9] == "9a") {
+//                PlayController.GlobalVariable.player!.rate = 1.2
+//                PlayController.GlobalVariable.bg!.rate = 1.2
+//            }
+//
+//            if (ViewController.GlobalVariable.songList[9] == "9c") {
+//                PlayController.GlobalVariable.player!.rate = 0.95
+//                PlayController.GlobalVariable.bg!.rate = 0.95
+//            }
+//            if (ViewController.GlobalVariable.songList[9] == "9d") {
+//                PlayController.GlobalVariable.player!.rate = 0.9
+//                PlayController.GlobalVariable.bg!.rate = 0.9
+//            }
             PlayController.GlobalVariable.player?.play()
             
             PlayController.GlobalVariable.bg?.play()

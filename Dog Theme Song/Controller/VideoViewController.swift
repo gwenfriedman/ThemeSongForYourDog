@@ -119,14 +119,14 @@ class VideoViewController: UIViewController {
             label = UILabel(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70))
             label!.textAlignment = .center
             label!.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
-            label!.text = "Share on social media using #WooofThemeSong"
+            label!.text = "Share on social media \n using #Howlerr"
             label!.numberOfLines = 0
             label!.textColor = .white
             self.view.addSubview(label!)
             
             let btnimg = UIImage(named: "x-white")!
 
-            xButton = UIButton(frame: CGRect(x: 35, y: 105, width: 15, height: 15))
+            xButton = UIButton(frame: CGRect(x: 40, y: 110, width: 15, height: 15))
             xButton!.setImage(btnimg, for: UIControl.State())
             xButton!.addTarget(self, action: #selector(close), for: .touchUpInside)
             view.addSubview(xButton!)

@@ -54,10 +54,12 @@ public func createSound(soundFiles: [String], outputFile: String) {
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
 
         for n in 0...8 {
+            print(ViewController.GlobalVariable.songList[n])
             let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeAdd(avAsset.duration, CMTimeMake(value: -2500,timescale: 44100)))
+            let timeRange: CMTimeRange = CMTimeRangeMake(start: CMTime.zero, duration:
+                CMTimeAdd(avAsset.duration, CMTimeMake(value: -2600,timescale: 44100)))
             
             let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
             
@@ -109,22 +111,6 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 print(error.localizedDescription)
             }
             
-            GlobalVariable.player!.enableRate = true
-            GlobalVariable.bg!.enableRate = true
-            
-            if (ViewController.GlobalVariable.songList[9] == "9a") {
-                GlobalVariable.player!.rate = 1.2
-                GlobalVariable.bg!.rate = 1.2
-            }
-
-            if (ViewController.GlobalVariable.songList[9] == "9c") {
-                GlobalVariable.player!.rate = 0.95
-                GlobalVariable.bg!.rate = 0.95
-            }
-            if (ViewController.GlobalVariable.songList[9] == "9d") {
-                GlobalVariable.player!.rate = 0.9
-                GlobalVariable.bg!.rate = 0.9
-            }
             GlobalVariable.player!.play()
             GlobalVariable.bg!.play()
             
@@ -181,13 +167,15 @@ public func createSound(soundFiles: [String], outputFile: String) {
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
         label.text = " \(dogName2)'s Theme Song"
         label.textColor = .white
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
         self.view.addSubview(label)
         
         let btnimg = UIImage(named: "play-white")!
         
         let centered = (screenWidth / 2) - 50
                 
-        playButton = UIButton(frame: CGRect(x: centered, y: 95, width: 100, height: 100))
+        playButton = UIButton(frame: CGRect(x: centered, y: 105, width: 100, height: 100))
         playButton!.setImage(btnimg, for: UIControl.State())
         playButton!.addTarget(self, action: #selector(playSong), for: .touchUpInside)
         view.addSubview(playButton!)
@@ -211,10 +199,26 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 print(error.description)
             }
         }
+            var lyrics = ""
+            
+            if (ViewController.GlobalVariable.songList[9] == "9a") {
+                lyrics = Bundle.main.path(forResource: "theme1", ofType: "mp3")!
+            }
+            
+            if (ViewController.GlobalVariable.songList[9] == "9b") {
+                lyrics = Bundle.main.path(forResource: "theme3", ofType: "mp3")!
+            }
+            
+            if (ViewController.GlobalVariable.songList[9] == "9c") {
+                lyrics = Bundle.main.path(forResource: "theme2", ofType: "mp3")!
+            }
+            
+            if (ViewController.GlobalVariable.songList[9] == "9d") {
+               lyrics = Bundle.main.path(forResource: "theme4", ofType: "mp3")!
+           }
         
-        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
             do {
-                GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
+                GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics))
                 guard let bg = GlobalVariable.bg else { return }
         
                 bg.prepareToPlay()

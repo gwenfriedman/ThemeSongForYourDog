@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7wu-Ob-AEB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7wu-Ob-AEB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +10,7 @@
         <!--Name View Controller-->
         <scene sceneID="GCK-pc-slH">
             <objects>
-                <viewController id="7wu-Ob-AEB" customClass="NameViewController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7wu-Ob-AEB" customClass="NameViewController" customModule="Howlerr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UXT-Go-rlu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +71,7 @@
         <!--Controller-->
         <scene sceneID="tBM-Yr-aF9">
             <objects>
-                <viewController id="f5r-Cv-gnZ" customClass="MFController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f5r-Cv-gnZ" customClass="MFController" customModule="Howlerr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9m-nG-Zaj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +146,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Howlerr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +275,7 @@
         <!--Video Controller-->
         <scene sceneID="cU0-wr-jdu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="JL9-7m-ReL" customClass="VideoController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JL9-7m-ReL" customClass="VideoController" customModule="Howlerr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gK6-tX-HBh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,15 +289,16 @@
                                     <segue destination="KAY-ND-lfm" kind="presentation" modalPresentationStyle="fullScreen" id="nlK-cI-d58"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i11-Yf-7Tw" customClass="SwiftyRecordButton" customModule="Wooof">
-                                <rect key="frame" x="184" y="798" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i11-Yf-7Tw" customClass="SwiftyRecordButton" customModule="Howlerr">
+                                <rect key="frame" x="192" y="794" width="30" height="30"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="i11-Yf-7Tw" firstAttribute="centerX" secondItem="gK6-tX-HBh" secondAttribute="centerX" id="29b-bO-rU9"/>
+                            <constraint firstItem="i11-Yf-7Tw" firstAttribute="centerX" secondItem="gK6-tX-HBh" secondAttribute="centerX" id="DNT-ov-XDP"/>
                             <constraint firstItem="vj1-hh-FQb" firstAttribute="leading" secondItem="P0f-LA-hBc" secondAttribute="leading" constant="20" id="Hfj-ct-a0j"/>
-                            <constraint firstItem="P0f-LA-hBc" firstAttribute="bottom" secondItem="i11-Yf-7Tw" secondAttribute="bottom" constant="34" id="NMr-sE-PkP"/>
-                            <constraint firstItem="i11-Yf-7Tw" firstAttribute="leading" secondItem="P0f-LA-hBc" secondAttribute="leading" constant="184" id="qq0-uN-B1G"/>
+                            <constraint firstItem="P0f-LA-hBc" firstAttribute="bottom" secondItem="i11-Yf-7Tw" secondAttribute="bottom" constant="38" id="LnC-hu-AeV"/>
                             <constraint firstItem="vj1-hh-FQb" firstAttribute="top" secondItem="P0f-LA-hBc" secondAttribute="top" constant="20" id="so4-VG-s64"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P0f-LA-hBc"/>
@@ -315,7 +315,7 @@
         <!--Video View Controller-->
         <scene sceneID="hfX-pX-Qgy">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="3BV-v2-GxI" customClass="VideoViewController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="3BV-v2-GxI" customClass="VideoViewController" customModule="Howlerr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Suq-yZ-mIS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,19 +330,19 @@
         <!--Play Controller-->
         <scene sceneID="qaQ-Pa-b92">
             <objects>
-                <viewController id="KAY-ND-lfm" customClass="PlayController" customModule="Dog_Theme_Song" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KAY-ND-lfm" customClass="PlayController" customModule="Howlerr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yr9-nb-hf9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record a video with theme song" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKh-U6-IAj">
-                                <rect key="frame" x="47" y="459" width="320" height="24"/>
+                                <rect key="frame" x="47" y="440" width="320" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjO-9k-oWD">
-                                <rect key="frame" x="120" y="326" width="174" height="111"/>
+                                <rect key="frame" x="120" y="314" width="174" height="111"/>
                                 <state key="normal" image="camera"/>
                                 <connections>
                                     <action selector="recordBtn:" destination="KAY-ND-lfm" eventType="touchUpInside" id="dnj-gO-tQC"/>
@@ -350,13 +350,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Turn up the volume) " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlL-dr-KNU">
-                                <rect key="frame" x="100" y="491" width="214" height="20.5"/>
+                                <rect key="frame" x="100" y="469" width="214" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6C-lL-A3Y">
-                                <rect key="frame" x="120" y="586" width="174" height="40"/>
+                                <rect key="frame" x="120" y="569.5" width="174" height="40"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.37647058820000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <state key="normal" title="  Start Over  ">
@@ -367,19 +367,31 @@
                                     <segue destination="7wu-Ob-AEB" kind="presentation" modalPresentationStyle="fullScreen" id="MmA-hg-xXC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music by Noah Taylor" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-Sx-8Hb">
+                                <rect key="frame" x="133.5" y="832" width="147" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="zXZ-90-7j3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="GjO-9k-oWD" secondAttribute="trailing" constant="120" id="24A-i8-LKf"/>
                             <constraint firstItem="GjO-9k-oWD" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="120" id="8mA-7l-6HV"/>
+                            <constraint firstItem="ODG-Sx-8Hb" firstAttribute="centerX" secondItem="Yr9-nb-hf9" secondAttribute="centerX" id="AzX-Xx-Bse"/>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="gKh-U6-IAj" secondAttribute="trailing" constant="47" id="Gfg-a9-XGu"/>
-                            <constraint firstItem="VlL-dr-KNU" firstAttribute="top" secondItem="gKh-U6-IAj" secondAttribute="bottom" constant="8" id="HyL-sy-N0w"/>
+                            <constraint firstItem="VlL-dr-KNU" firstAttribute="top" secondItem="gKh-U6-IAj" secondAttribute="bottom" constant="5" id="HyL-sy-N0w"/>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="VlL-dr-KNU" secondAttribute="trailing" constant="100" id="MAw-hI-PTD"/>
-                            <constraint firstItem="GjO-9k-oWD" firstAttribute="top" secondItem="dsA-bD-kO3" secondAttribute="top" constant="282" id="PRF-at-ap1"/>
-                            <constraint firstItem="gKh-U6-IAj" firstAttribute="top" secondItem="GjO-9k-oWD" secondAttribute="bottom" constant="22" id="UQN-fg-N6f"/>
+                            <constraint firstItem="GjO-9k-oWD" firstAttribute="top" secondItem="dsA-bD-kO3" secondAttribute="top" constant="270" id="PRF-at-ap1"/>
+                            <constraint firstItem="ODG-Sx-8Hb" firstAttribute="centerX" secondItem="Yr9-nb-hf9" secondAttribute="centerX" id="Tau-Jp-AVN"/>
+                            <constraint firstItem="gKh-U6-IAj" firstAttribute="top" secondItem="GjO-9k-oWD" secondAttribute="bottom" constant="15" id="UQN-fg-N6f"/>
                             <constraint firstItem="gKh-U6-IAj" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="47" id="VON-kx-7yo"/>
                             <constraint firstItem="dsA-bD-kO3" firstAttribute="trailing" secondItem="d6C-lL-A3Y" secondAttribute="trailing" constant="120" id="hF4-51-xKW"/>
-                            <constraint firstItem="d6C-lL-A3Y" firstAttribute="top" secondItem="VlL-dr-KNU" secondAttribute="bottom" constant="74.670000000000002" id="heT-rl-RDp"/>
+                            <constraint firstItem="d6C-lL-A3Y" firstAttribute="top" secondItem="VlL-dr-KNU" secondAttribute="bottom" constant="80" id="heT-rl-RDp"/>
+                            <constraint firstItem="dsA-bD-kO3" firstAttribute="bottom" secondItem="ODG-Sx-8Hb" secondAttribute="bottom" constant="12" id="ojn-mq-Kcg"/>
                             <constraint firstItem="d6C-lL-A3Y" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="120" id="s0k-8t-c5n"/>
                             <constraint firstItem="VlL-dr-KNU" firstAttribute="leading" secondItem="dsA-bD-kO3" secondAttribute="leading" constant="100" id="wrD-hY-IOc"/>
                         </constraints>
@@ -388,10 +400,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKF-Z5-9DS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.5797101449277" y="132.88043478260872"/>
+            <point key="canvasLocation" x="1840.5797101449277" y="132.58928571428572"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="6DK-RL-M9k"/>
         <segue reference="nlK-cI-d58"/>
     </inferredMetricsTieBreakers>
     <resources>

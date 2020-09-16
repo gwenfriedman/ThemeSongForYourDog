@@ -50,7 +50,7 @@ class MFController: UIViewController, SSRadioButtonControllerDelegate {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 115))
         label.textAlignment = .center
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
-        label.text = "Wooof"
+        label.text = "Howlerr"
         label.textColor = .white
         self.view.addSubview(label)
         
