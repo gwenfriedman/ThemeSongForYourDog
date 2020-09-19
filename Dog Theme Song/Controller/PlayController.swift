@@ -48,13 +48,11 @@ class PlayController: UIViewController,AVAudioPlayerDelegate {
     }
 
 public func createSound(soundFiles: [String], outputFile: String) {
-    print(soundFiles)
     var startTime: CMTime = CMTime.zero
     let composition: AVMutableComposition = AVMutableComposition()
         let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
 
         for n in 0...8 {
-            print(ViewController.GlobalVariable.songList[n])
             let sound: String = Bundle.main.path(forResource: ViewController.GlobalVariable.songList[n], ofType: "mp3")!
             let url: URL = URL(fileURLWithPath: sound)
             let avAsset: AVURLAsset = AVURLAsset(url: url)

@@ -17,22 +17,11 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         super.viewDidLoad()
         shouldPrompToAppSettings = true
         cameraDelegate = self
-        maximumVideoDuration = 50.0
         shouldUseDeviceOrientation = true
-        allowAutoRotate = true
+//        allowAutoRotate = true
         audioEnabled = true
         flashMode = .auto
         captureButton.buttonEnabled = false
-        
-//        let lyrics = Bundle.main.path(forResource: "R2", ofType: "mp3")
-//            do {
-//                PlayController.GlobalVariable.bg = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: lyrics!))
-//                guard let bg = PlayController.GlobalVariable.bg else { return }
-//
-//                bg.prepareToPlay()
-//            } catch let error as NSError {
-//                print(error.description)
-//            }
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -59,20 +48,6 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         captureButton.growButton()
         
         do {
-            
-//            if (ViewController.GlobalVariable.songList[9] == "9a") {
-//                PlayController.GlobalVariable.player!.rate = 1.2
-//                PlayController.GlobalVariable.bg!.rate = 1.2
-//            }
-//
-//            if (ViewController.GlobalVariable.songList[9] == "9c") {
-//                PlayController.GlobalVariable.player!.rate = 0.95
-//                PlayController.GlobalVariable.bg!.rate = 0.95
-//            }
-//            if (ViewController.GlobalVariable.songList[9] == "9d") {
-//                PlayController.GlobalVariable.player!.rate = 0.9
-//                PlayController.GlobalVariable.bg!.rate = 0.9
-//            }
             PlayController.GlobalVariable.player?.play()
             
             PlayController.GlobalVariable.bg?.play()
@@ -84,12 +59,13 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
-        print("Did finish Recording")
-        PlayController.GlobalVariable.bg!.stop()
-        PlayController.GlobalVariable.player!.stop()
-        PlayController.GlobalVariable.bg!.currentTime = 0
-        PlayController.GlobalVariable.player!.currentTime = 0
-        captureButton.shrinkButton()
+        if(PlayController.GlobalVariable.bg !== nil && PlayController.GlobalVariable.player !== nil) {
+            PlayController.GlobalVariable.bg!.stop()
+            PlayController.GlobalVariable.player!.stop()
+            PlayController.GlobalVariable.bg!.currentTime = 0
+            PlayController.GlobalVariable.player!.currentTime = 0
+            captureButton.shrinkButton()
+        }
     }
 
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
