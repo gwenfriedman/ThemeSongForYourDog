@@ -18,7 +18,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         shouldPrompToAppSettings = true
         cameraDelegate = self
         shouldUseDeviceOrientation = true
-//        allowAutoRotate = true
+        allowAutoRotate = true
         audioEnabled = true
         flashMode = .auto
         captureButton.buttonEnabled = false

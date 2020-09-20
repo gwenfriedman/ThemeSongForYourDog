@@ -58,6 +58,8 @@
 		06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */; };
 		06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */; };
 		06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AC6124DF0153001D5556 /* PlayController.swift */; };
+		06C86FB12517FE6C0098D006 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB02517FE6C0098D006 /* CoreMedia.framework */; };
+		06C86FB32517FE810098D006 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB22517FE810098D006 /* AVFoundation.framework */; };
 		06FD965B23441DA300C4E81D /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD965A23441DA300C4E81D /* Variables.swift */; };
 		AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1662223D9C2600E06531 /* NameViewController.swift */; };
 		AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C1223C161C008A702D /* AppDelegate.swift */; };
@@ -135,6 +137,8 @@
 		06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = "../../../../Downloads/SwiftyCam-master/Source/SwiftyCamViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		06C5AC6124DF0153001D5556 /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
+		06C86FB02517FE6C0098D006 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		06C86FB22517FE810098D006 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		06FD965A23441DA300C4E81D /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		AE9A1662223D9C2600E06531 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		AEDF12BE223C161C008A702D /* Howlerr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howlerr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,12 +158,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C86FB32517FE810098D006 /* AVFoundation.framework in Frameworks */,
+				06C86FB12517FE6C0098D006 /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06C86FAF2517FE6B0098D006 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C86FB22517FE810098D006 /* AVFoundation.framework */,
+				06C86FB02517FE6C0098D006 /* CoreMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AEDF12B5223C161C008A702D = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +219,7 @@
 				AEDF12FB223C3388008A702D /* Default-568h@2x.png */,
 				AEDF12C0223C161C008A702D /* Dog Theme Song */,
 				AEDF12BF223C161C008A702D /* Products */,
+				06C86FAF2517FE6B0098D006 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -553,7 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = AUM9368RBU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,7 +581,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Wooof";
 				PRODUCT_NAME = Howlerr;
 				SWIFT_VERSION = 4.2;
@@ -578,7 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = AUM9368RBU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +606,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Wooof";
 				PRODUCT_NAME = Howlerr;
 				SWIFT_VERSION = 4.2;
