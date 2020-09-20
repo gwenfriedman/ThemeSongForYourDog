@@ -109,8 +109,10 @@ public func createSound(soundFiles: [String], outputFile: String) {
                 print(error.localizedDescription)
             }
             
-            GlobalVariable.player!.play()
-            GlobalVariable.bg!.play()
+            if(GlobalVariable.player !== nil && GlobalVariable.bg !== nil){
+                GlobalVariable.player!.play()
+                GlobalVariable.bg!.play()
+            }
             
             toggleState = 2
             playBtn.setImage(UIImage(named:"pause-white.png"),for:UIControl.State.normal)
