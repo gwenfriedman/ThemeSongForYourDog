@@ -58,8 +58,8 @@
 		06C5AB8824D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8324D9DAEB001D5556 /* SwiftyCamViewControllerDelegate.swift */; };
 		06C5AB8A24D9DB1C001D5556 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AB8924D9DB1C001D5556 /* SwiftyRecordButton.swift */; };
 		06C5AC6224DF0153001D5556 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5AC6124DF0153001D5556 /* PlayController.swift */; };
-		06C86FB12517FE6C0098D006 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB02517FE6C0098D006 /* CoreMedia.framework */; };
-		06C86FB32517FE810098D006 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB22517FE810098D006 /* AVFoundation.framework */; };
+		06C86FB42518E0490098D006 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB22517FE810098D006 /* AVFoundation.framework */; };
+		06C86FB62518E04F0098D006 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C86FB02517FE6C0098D006 /* CoreMedia.framework */; };
 		06FD965B23441DA300C4E81D /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD965A23441DA300C4E81D /* Variables.swift */; };
 		AE9A1663223D9C2600E06531 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1662223D9C2600E06531 /* NameViewController.swift */; };
 		AEDF12C2223C161C008A702D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12C1223C161C008A702D /* AppDelegate.swift */; };
@@ -71,19 +71,6 @@
 		AEDF12DA223C2467008A702D /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF12D9223C2467008A702D /* QuestionBank.swift */; };
 		AEDF12FC223C3388008A702D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDF12FB223C3388008A702D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		06C5ABD824DC7156001D5556 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0670AF1224E066650044A480 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSRadioButton.swift; path = "../../../../Downloads/SSRadioButtonsController-master/SSRadioButtonController/SSRadioButton.swift"; sourceTree = "<group>"; };
@@ -158,8 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06C86FB32517FE810098D006 /* AVFoundation.framework in Frameworks */,
-				06C86FB12517FE6C0098D006 /* CoreMedia.framework in Frameworks */,
+				06C86FB62518E04F0098D006 /* CoreMedia.framework in Frameworks */,
+				06C86FB42518E0490098D006 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +290,6 @@
 				AEDF12BA223C161C008A702D /* Sources */,
 				AEDF12BB223C161C008A702D /* Frameworks */,
 				AEDF12BC223C161C008A702D /* Resources */,
-				06C5ABD824DC7156001D5556 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -569,19 +555,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = AUM9368RBU;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Dog Theme Song/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Wooof";
 				PRODUCT_NAME = Howlerr;
 				SWIFT_VERSION = 4.2;
@@ -594,19 +577,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = AUM9368RBU;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Dog Theme Song/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "Gwen-Friedman.Wooof";
 				PRODUCT_NAME = Howlerr;
 				SWIFT_VERSION = 4.2;
