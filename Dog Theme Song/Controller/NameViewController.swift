@@ -12,7 +12,7 @@ class NameViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.submitBtn.isHidden = false
-
+        
     }
     
     //name entry
@@ -24,12 +24,12 @@ class NameViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
         if (textField.text != "") {
             GlobalVariable.dogName = textField.text!
-            }
+        }
         if(GlobalVariable.dogName == "") {
             GlobalVariable.dogName = "your dog"
         }
     }
-        
+    
     struct GlobalVariable {
         static var dogName: String = ""
         static var AVFileDone: Bool = false
@@ -38,16 +38,24 @@ class NameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Always adopt a light interface style.
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
         // Screen width.
         var screenWidth: CGFloat {
             return UIScreen.main.bounds.width
         }
-
+        
         let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 95)
         let view = UIView(frame: rect)
         view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
         self.view.addSubview(view)
-
+        
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 115))
         label.textAlignment = .center
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
@@ -60,20 +68,20 @@ class NameViewController: UIViewController {
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 15, y: 30, width: 65, height: 65)
         view.addSubview(imageView)
-
+        
         textField.delegate = self
         
         textField.addTarget(self, action: #selector(NameViewController.textFieldDidChange(_:)), for: .editingChanged)
-
+        
         
         self.submitBtn.isHidden = true
         
         let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/dog-theme-song.m4a"
-
+        
         do {
-           try FileManager.default.removeItem(atPath: exportPath)
-           }
-           catch {}
+            try FileManager.default.removeItem(atPath: exportPath)
+        }
+        catch {}
     }
     
 }

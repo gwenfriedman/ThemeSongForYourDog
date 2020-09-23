@@ -9,7 +9,7 @@
 import UIKit
 
 class MFController: UIViewController, SSRadioButtonControllerDelegate {
-                
+    
     @IBAction func startButton(_ sender: Any) {
         if(GlobalVariable.gender == "") {
             GlobalVariable.gender = "its"
@@ -25,7 +25,7 @@ class MFController: UIViewController, SSRadioButtonControllerDelegate {
     
     
     @IBOutlet weak var submitBtn: UIButton!
-
+    
     
     var radioButtonController: SSRadioButtonsController?
     
@@ -37,16 +37,23 @@ class MFController: UIViewController, SSRadioButtonControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Always adopt a light interface style.
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
+        
         // Screen width.
         var screenWidth: CGFloat {
             return UIScreen.main.bounds.width
         }
-
+        
         let rect = CGRect(x: 0, y: 0, width: screenWidth, height: 95)
         let view = UIView(frame: rect)
         view.backgroundColor = UIColor(displayP3Red: 241/255, green: 96/255, blue: 47/255, alpha: 100)
         self.view.addSubview(view)
-
+        
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 115))
         label.textAlignment = .center
         label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 30)
@@ -68,7 +75,7 @@ class MFController: UIViewController, SSRadioButtonControllerDelegate {
     }
     
     func didSelectButton(selectedButton: UIButton?) {
-
+        
         if (radioButtonController!.selectedButton() == maleBtn) {
             GlobalVariable.gender = "his"
             GlobalVariable.gender2 = "he's"
@@ -77,6 +84,6 @@ class MFController: UIViewController, SSRadioButtonControllerDelegate {
             GlobalVariable.gender = "her"
             GlobalVariable.gender2 = "she's"
         }
-            self.submitBtn.isHidden = false
+        self.submitBtn.isHidden = false
     }
 }

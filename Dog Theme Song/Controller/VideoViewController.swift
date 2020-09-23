@@ -31,7 +31,7 @@ class VideoViewController: UIViewController {
     var bgView : UIView?
     var label : UILabel?
     var xButton : UIButton?
-
+    
     
     init(videoURL: URL) {
         self.videoURL = videoURL
@@ -42,9 +42,17 @@ class VideoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Always adopt a light interface style.
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
+        
         self.view.backgroundColor = UIColor.gray
         player = AVPlayer(url: videoURL)
         playerController = AVPlayerViewController()
@@ -63,12 +71,12 @@ class VideoViewController: UIViewController {
         
         let btnimg = UIImage(named: "x-white")!
         let savebtn = UIImage(named: "save-white")!
-                
+        
         let cancelButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30.0, height: 30.0))
         cancelButton.setImage(btnimg, for: UIControl.State())
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         view.addSubview(cancelButton)
-     
+        
         saveButton = UIButton(frame: CGRect(x: screenWidth - 60, y: 20, width: 30.0, height: 30.0))
         saveButton!.setImage(savebtn, for: UIControl.State())
         saveButton!.addTarget(self, action: #selector(saveBtn), for: .touchUpInside)
@@ -108,8 +116,8 @@ class VideoViewController: UIViewController {
     
     @objc func saveBtn() {
         if(saved == false) {
-        UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
-        let saveCheck = UIImage(named: "check-white")!
+            UISaveVideoAtPathToSavedPhotosAlbum("\(videoURL.path)", self, nil, nil)
+            let saveCheck = UIImage(named: "check-white")!
             self.saveButton!.setImage(saveCheck, for: UIControl.State())
             rect = CGRect(x: 30, y: 100, width: screenWidth - 60, height: 70)
             bgView = UIView(frame: rect!)
@@ -125,13 +133,13 @@ class VideoViewController: UIViewController {
             self.view.addSubview(label!)
             
             let btnimg = UIImage(named: "x-white")!
-
+            
             xButton = UIButton(frame: CGRect(x: 40, y: 110, width: 15, height: 15))
             xButton!.setImage(btnimg, for: UIControl.State())
             xButton!.addTarget(self, action: #selector(close), for: .touchUpInside)
             view.addSubview(xButton!)
             
-        saved = true
+            saved = true
             
         }
     }

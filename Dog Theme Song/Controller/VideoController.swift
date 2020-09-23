@@ -12,9 +12,17 @@ import AVFoundation
 class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
     @IBOutlet weak var captureButton    : SwiftyRecordButton!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Always adopt a light interface style.
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
+        
         shouldPrompToAppSettings = true
         cameraDelegate = self
         shouldUseDeviceOrientation = true
@@ -23,11 +31,11 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         flashMode = .auto
         captureButton.buttonEnabled = false
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         captureButton.delegate = self
@@ -42,7 +50,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         print("Session did stop running")
         captureButton.buttonEnabled = false
     }
-
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         print("Did Begin Recording")
         captureButton.growButton()
@@ -51,13 +59,13 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
             PlayController.GlobalVariable.player?.play()
             
             PlayController.GlobalVariable.bg?.play()
-
+            
         } catch let error as NSError {
             print(error.description)
         }
-
+        
     }
-
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         if(PlayController.GlobalVariable.bg !== nil && PlayController.GlobalVariable.player !== nil) {
             PlayController.GlobalVariable.bg!.stop()
@@ -67,7 +75,7 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
             captureButton.shrinkButton()
         }
     }
-
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
         let newVC = VideoViewController(videoURL: url)
         newVC.modalPresentationStyle = .fullScreen
@@ -80,12 +88,12 @@ class VideoController: SwiftyCamViewController, SwiftyCamViewControllerDelegate 
         alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didChangeZoomLevel zoom: CGFloat) {
         print("Zoom level did change. Level: \(zoom)")
         print(zoom)
     }
-
+    
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didSwitchCameras camera: SwiftyCamViewController.CameraSelection) {
         print("Camera did change to \(camera.rawValue)")
         print(camera)

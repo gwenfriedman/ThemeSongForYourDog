@@ -16,7 +16,7 @@ extension UIImageView {
         }
         let url = URL(fileURLWithPath: path)
         guard let gifData = try? Data(contentsOf: url),
-            let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
+              let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
         var images = [UIImage]()
         let imageCount = CGImageSourceGetCount(source)
         for i in 0 ..< imageCount {
@@ -38,7 +38,7 @@ class SpinnerViewController: UIViewController {
     var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
-
+    
     override func loadView() {
         view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 1)
@@ -52,7 +52,7 @@ class SpinnerViewController: UIViewController {
         }
         let centerX = screenWidth / 2
         let centerY = screenHeight / 2
-            
+        
         guard let loadingImageView = UIImageView.fromGif(frame: view.frame, resourceName: "loading-big") else {
             return }
         loadingImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
